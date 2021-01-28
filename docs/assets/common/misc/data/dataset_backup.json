@@ -1,0 +1,187 @@
+{
+  "firstSetFilePrefix": "B",
+  "firstSet": [
+    "Dans la cour",
+    "Chez moi",
+    "Pendant les vacances",
+    "Sous un arbre",
+    "Derrière ma maison",
+    "Dans ma cabane",
+    "Dans le train",
+    "Sous mon lit",
+    "A l’école",
+    "Dans ma classe",
+    "Au parc",
+    "Avec mon papa",
+    "Avec ma maman",
+    "Avec ma mamie",
+    "Avec mon papi",
+    "Avec mon frère",
+    "Avec ma sœur",
+    "Avec mon cousin",
+    "Avec ma cousine",
+    "Dans mon bain",
+    "Dans la cuisine"
+  ],
+  "secondSetFilePrefix": "C",
+  "secondSet": [
+    "je mange",
+    "je croque",
+    "j’arrose",
+    "je casse",
+    "je range",
+    "je découpe",
+    "je colorie",
+    "je tords",
+    "je mords",
+    "j’embrasse",
+    "je prête",
+    "j’oublie",
+    "je lance",
+    "je fais cuire",
+    "je soigne",
+    "je lave",
+    "j’allume",
+    "je console",
+    "j’épluche",
+    "je chatouille",
+    "je ratatine",
+    "je pince",
+    "je gratte",
+    "j’écoute",
+    "j’endors",
+    "j’ai oublié",
+    "j’ai caché",
+    "j’ai perdu"
+  ],
+  "thirdSetFilePrefix": "D",
+  "thirdSet": [
+    {
+      "audio": "un téléphone",
+      "image": "citron"
+    },
+    {
+      "audio": "une biscotte",
+      "image": "baignoire"
+    },
+    {
+      "audio": "un parapluie",
+      "image": "dé"
+    },
+    {
+      "audio": "des lunettes",
+      "image": "couverts"
+    },
+    {
+      "audio": "des bananes",
+      "image": "bottes"
+    },
+    {
+      "audio": "une girafe",
+      "image": "horloge"
+    },
+    {
+      "audio": "un vélo",
+      "image": "maillot"
+    },
+    {
+      "audio": "un lapin",
+      "image": "ballon"
+    },
+    {
+      "audio": "des fraises",
+      "image": "crayons"
+    },
+    {
+      "audio": "un avion",
+      "image": "chien"
+    },
+    {
+      "audio": "une courgette",
+      "image": "voilier"
+    },
+    {
+      "audio": "une trottinette",
+      "image": "pomme"
+    },
+    {
+      "audio": "un fromage",
+      "image": "camion"
+    },
+    {
+      "audio": "un tracteur",
+      "image": "nuage"
+    },
+    {
+      "audio": "un brosse à dents",
+      "image": "moto"
+    },
+    {
+      "audio": "un rhinocéros",
+      "image": "arbre"
+    },
+    {
+      "audio": "un chapeau",
+      "image": "passoire"
+    },
+    {
+      "audio": "un pyjama",
+      "image": "oiseau"
+    },
+    {
+      "audio": "une grenouille",
+      "image": "couronne"
+    },
+    {
+      "audio": "un piano",
+      "image": "tortue"
+    },
+    {
+      "audio": "des fleurs",
+      "image": "gants"
+    },
+    {
+      "audio": "un papillon",
+      "image": "château"
+    },
+    {
+      "audio": "une tomate",
+      "image": "ciseaux"
+    },
+    {
+      "audio": "un hippopotame",
+      "image": "sapin"
+    },
+    {
+      "audio": "un crocodile",
+      "image": "trompette"
+    },
+    {
+      "audio": "une vache",
+      "image": "maison"
+    }
+  ],
+  "fourthSetFilePrefix": "F",
+  "fourthSet": [
+    "Rires 1",
+    "Rires 2",
+    "Rires 3",
+    "Rires 4",
+    "Rires 5",
+    "Rires 6",
+    "Rires 7",
+    "Rires 8"
+  ],
+  "fifthSetFilePrefix": "G",
+  "fifthSet": [
+    "C'est complètement toqué du toc-toc !",
+    "Oh ! Mais ça va pas la tête ?",
+    "Mais quel coquin !",
+    "Il est drôle !",
+    "Oh ! Mais ça va pas la tête ou quoi ?",
+    "Ah !",
+    "Wouah !",
+    "Non !",
+    "Trop drôle !"
+  ]
+}

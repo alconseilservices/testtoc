@@ -1,0 +1,23 @@
+{
+  "playBtn1": {
+    "x": 1240,
+    "y": 1691,
+    "width": 204,
+    "height": 204,
+    "image": "Picto_Play.svg"
+  },
+  "playBtn2": {
+    "x": 2400,
+    "y": 1691,
+    "width": 204,
+    "height": 204,
+    "image": "Picto_Play.svg"
+  },
+  "mascot": {
+    "x": 1608,
+    "y": 500,
+    "width": 621,
+    "height": 621,
+    "image": "TocToc_Menu_Mascotte.png"
+  }
+}

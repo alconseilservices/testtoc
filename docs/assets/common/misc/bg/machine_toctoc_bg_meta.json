@@ -1,0 +1,56 @@
+{
+  "zone1": {
+    "firstCornerX": 725,
+    "firstCornerY": 1055,
+    "secondCornerX": 1460,
+    "secondCornerY": 1676
+  },
+  "zone2": {
+    "firstCornerX": 1460,
+    "firstCornerY": 1055,
+    "secondCornerX": 2200,
+    "secondCornerY": 1677
+  },
+  "zone3": {
+    "firstCornerX": 2206,
+    "firstCornerY": 1055,
+    "secondCornerX": 2935,
+    "secondCornerY": 1675
+  },
+  "startBtn": {
+    "firstCornerX": 3109,
+    "firstCornerY": 911,
+    "secondCornerX": 3290,
+    "secondCornerY": 1090
+  },
+  "startZone1Btn": {
+    "firstCornerX": 977,
+    "firstCornerY": 1735,
+    "secondCornerX": 1175,
+    "secondCornerY": 1920
+  },
+  "startZone2Btn": {
+    "firstCornerX": 1745,
+    "firstCornerY": 1740,
+    "secondCornerX": 1940,
+    "secondCornerY": 1918
+  },
+  "startZone3Btn": {
+    "firstCornerX": 2485,
+    "firstCornerY": 1730,
+    "secondCornerX": 2680,
+    "secondCornerY": 1917
+  },
+  "replayAudioBtn": {
+    "firstCornerX": 1730,
+    "firstCornerY": 514,
+    "secondCornerX": 1954,
+    "secondCornerY": 728
+  },
+  "backBtn": {
+    "firstCornerX": 725,
+    "firstCornerY": 514,
+    "secondCornerX": 959,
+    "secondCornerY": 733
+  }
+}

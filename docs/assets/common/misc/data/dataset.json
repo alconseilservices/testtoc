@@ -1,0 +1,61 @@
+{
+  "firstSetFilePrefix": "B",
+  "firstSet": [
+    "Dans la cour",
+    "Chez moi",
+    "Pendant les vacances",
+    "Sous un arbre",
+    "Derrière ma maison"
+  ],
+  "secondSetFilePrefix": "C",
+  "secondSet": [
+    "je mange",
+    "je croque",
+    "j’arrose",
+    "je casse",
+    "je range"
+  ],
+  "thirdSetFilePrefix": "D",
+  "thirdSet": [
+    {
+      "audio": "un téléphone",
+      "image": "citron"
+    },
+    {
+      "audio": "une biscotte",
+      "image": "baignoire"
+    },
+    {
+      "audio": "un parapluie",
+      "image": "dé"
+    },
+    {
+      "audio": "des lunettes",
+      "image": "couverts"
+    },
+    {
+      "audio": "des bananes",
+      "image": "bottes"
+    }
+  ],
+  "fourthSetFilePrefix": "F",
+  "fourthSet": [
+    "Rires 2",
+    "Rires 7",
+    "Rires 8",
+    "Rires 9",
+    "Rires 10",
+    "Rires 11",
+    "Rires 13",
+    "Rires 15"
+  ],
+  "fifthSetFilePrefix": "G",
+  "fifthSet": [
+    "CestCompletementToque",
+    "CestCompletementToque_ALT",
+    "IlEstDrole",
+    "MaisQuelCoquin",
+    "OhMaisCaVaPas",
+    "OhMaisCaVaPasLaTete"
+  ]
+}
