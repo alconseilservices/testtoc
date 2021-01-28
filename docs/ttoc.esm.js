@@ -5,11 +5,11 @@ import { p as e, b as o } from "./p-f68e5270.js";
  */ (() => {
   const o = import.meta.url, t = {};
   return "" !== o && (t.resourcesUrl = new URL(".", o).href), e(t);
-})().then((e => o([ [ "p-43e10bfc", [ [ 0, "app-toctoc-machine", null, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-52d050f9", [ [ 0, "les-mots-toctoc", {
+})().then((e => o([ [ "p-43e10bfc", [ [ 0, "app-toctoc-machine", null, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-b4db373f", [ [ 0, "les-mots-toctoc", {
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-123a2928", [ [ 0, "les-phrases-toctoc", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-7f86a73f", [ [ 0, "app-home", {
+}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-4dba40fe", [ [ 0, "app-home", {
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-3bee3548", [ [ 0, "context-consumer", {
   context: [ 16 ],
@@ -51,7 +51,7 @@ import { p as e, b as o } from "./p-f68e5270.js";
   ariaSetsize: [ 2, "aria-setsize" ],
   ariaLabel: [ 1, "aria-label" ],
   match: [ 32 ]
-} ] ] ], [ "p-d44a6145", [ [ 0, "png-player-component", {
+} ] ] ], [ "p-d5387061", [ [ 0, "png-player-component", {
   zone: [ 16 ],
   heightAuto: [ 4, "height-auto" ],
   playSequence: [ 64 ],

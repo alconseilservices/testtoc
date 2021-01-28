@@ -65,7 +65,7 @@ const e = {
     height: 780,
     animation: [ {
       id: "hammer",
-      pathPrefix: "./assets/lesmots/anim/marteau/_MARTEAU_",
+      pathPrefix: "./assets/lesmots/anim/marteau/MARTEAU_",
       totalFrames: 34,
       soundEffect: "hammer"
     } ],
@@ -78,13 +78,13 @@ const e = {
     height: 1660,
     animation: [ {
       id: "steinerdown",
-      pathPrefix: "./assets/lesmots/anim/passoire/_PASSOIRE_",
+      pathPrefix: "./assets/lesmots/anim/passoire/PASSOIRE_",
       totalFrames: 48,
       soundEffect: "steinerdown",
       animationDurationMs: 1920
     }, {
       id: "steinerup",
-      pathPrefix: "./assets/lesmots/anim/passoire_monte/_PASSOIRE_MONTE_",
+      pathPrefix: "./assets/lesmots/anim/passoire_monte/PASSOIRE_MONTE_",
       totalFrames: 28,
       soundEffect: "steinerup",
       animationDurationMs: 1120
