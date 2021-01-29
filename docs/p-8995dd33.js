@@ -240,6 +240,13 @@ class {
   /**
    *
    * @param doMute
+   */  register(e, a) {
+    const n = e + "_" + a.substring(a.lastIndexOf("/") + 1).replace(".mp3", "");
+    return console.log(n), o.Sound.registerSound(s(a), n), n;
+  }
+  /**
+   *
+   * @param doMute
    */  mute(s) {
     o.Sound.muted = !!s;
   }

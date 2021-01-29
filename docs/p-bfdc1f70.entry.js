@@ -2,9 +2,9 @@ import { r as t, h as e, c as i } from "./p-f68e5270.js";
 
 import { b as s, a as n } from "./p-ab28ff84.js";
 
-import { Z as o, a } from "./p-3dafd9fa.js";
+import { Z as o, a } from "./p-8995dd33.js";
 
-import { f as r, s as c } from "./p-325fafe6.js";
+import { f as r, s as c } from "./p-ed3d6334.js";
 
 /**
  *
@@ -250,7 +250,20 @@ const d = class {
     t.sound && a.play(t.sound.substring(t.sound.lastIndexOf("/") + 1).replace(".mp3", "")), 
     this.setWordFontSize(!0), this.animationInProgress = !1, setTimeout((() => {
       this.mascot.playSequence(this.mascotEffect[Math.floor(Math.random() * this.mascotEffect.length)]);
-    }), 1e3), this.activityDetectorTimer = setTimeout((() => this.inactivityDetector.activate()), 2e3);
+    }), 1e3), this.activityDetectorTimer = setTimeout((() => this.inactivityDetector.activate()), 2e3), 
+    setTimeout((() => {
+      if (this.lastCard) {
+        this.wordPanel.innerHTML = "", this.setWordFontSize(!1);
+        const t = this.cardsList.getBoundingClientRect();
+        this.cardsList.querySelectorAll(".les-mots-toctoc-card").forEach((e => {
+          e.classList.add("hide"), e.style.left = "-" + t.height + "px";
+        })), this.cardInViewIndex = -1, this.lastCard = !1, this.moveOnConveyor(), setTimeout((() => {
+          this.cardsList.querySelectorAll(".les-mots-toctoc-card").forEach((t => {
+            t.classList.remove("hide");
+          }));
+        }), 3e3);
+      }
+    }), 2e3);
   }
   static get assetsDirs() {
     return [ "assets" ];

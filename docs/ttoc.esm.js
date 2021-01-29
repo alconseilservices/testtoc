@@ -1,15 +1,15 @@
-import { p as e, b as o } from "./p-f68e5270.js";
+import { p as e, b as t } from "./p-f68e5270.js";
 
 /*
  Stencil Client Patch Browser v2.3.0 | MIT Licensed | https://stenciljs.com
  */ (() => {
-  const o = import.meta.url, t = {};
-  return "" !== o && (t.resourcesUrl = new URL(".", o).href), e(t);
-})().then((e => o([ [ "p-43e10bfc", [ [ 0, "app-toctoc-machine", null, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-b4db373f", [ [ 0, "les-mots-toctoc", {
+  const t = import.meta.url, o = {};
+  return "" !== t && (o.resourcesUrl = new URL(".", t).href), e(o);
+})().then((e => t([ [ "p-b9e606e3", [ [ 0, "les-phrases-toctoc", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-123a2928", [ [ 0, "les-phrases-toctoc", {
+}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-bfdc1f70", [ [ 0, "les-mots-toctoc", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-4dba40fe", [ [ 0, "app-home", {
+}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-d79b750a", [ [ 0, "app-home", {
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-3bee3548", [ [ 0, "context-consumer", {
   context: [ 16 ],
@@ -19,19 +19,7 @@ import { p as e, b as o } from "./p-f68e5270.js";
 } ] ] ], [ "p-9250de13", [ [ 0, "stencil-async-content", {
   documentLocation: [ 1, "document-location" ],
   content: [ 32 ]
-} ] ] ], [ "p-1cd9a608", [ [ 0, "stencil-route-title", {
-  titleSuffix: [ 1, "title-suffix" ],
-  pageTitle: [ 1, "page-title" ]
-} ] ] ], [ "p-a7b95cc9", [ [ 0, "stencil-router-prompt", {
-  when: [ 4 ],
-  message: [ 1 ],
-  history: [ 16 ],
-  unblock: [ 32 ]
-} ] ] ], [ "p-a9766487", [ [ 0, "stencil-router-redirect", {
-  history: [ 16 ],
-  root: [ 1 ],
-  url: [ 1 ]
-} ] ] ], [ "p-e07ffef2", [ [ 0, "toctoc-randomizer-component" ] ] ], [ "p-621b9e08", [ [ 4, "stencil-route-link", {
+} ] ] ], [ "p-621b9e08", [ [ 4, "stencil-route-link", {
   url: [ 1 ],
   urlMatch: [ 1, "url-match" ],
   activeClass: [ 1, "active-class" ],
@@ -51,7 +39,25 @@ import { p as e, b as o } from "./p-f68e5270.js";
   ariaSetsize: [ 2, "aria-setsize" ],
   ariaLabel: [ 1, "aria-label" ],
   match: [ 32 ]
-} ] ] ], [ "p-d5387061", [ [ 0, "png-player-component", {
+} ] ] ], [ "p-1cd9a608", [ [ 0, "stencil-route-title", {
+  titleSuffix: [ 1, "title-suffix" ],
+  pageTitle: [ 1, "page-title" ]
+} ] ] ], [ "p-a7b95cc9", [ [ 0, "stencil-router-prompt", {
+  when: [ 4 ],
+  message: [ 1 ],
+  history: [ 16 ],
+  unblock: [ 32 ]
+} ] ] ], [ "p-a9766487", [ [ 0, "stencil-router-redirect", {
+  history: [ 16 ],
+  root: [ 1 ],
+  url: [ 1 ]
+} ] ] ], [ "p-b10be37c", [ [ 0, "toctoc-randomizer-component", {
+  voicedText: [ 16 ],
+  voicedImage: [ 16 ],
+  stop: [ 64 ],
+  playAudio: [ 64 ],
+  start: [ 64 ]
+} ] ] ], [ "p-a0a0d1e1", [ [ 0, "png-player-component", {
   zone: [ 16 ],
   heightAuto: [ 4, "height-auto" ],
   playSequence: [ 64 ],

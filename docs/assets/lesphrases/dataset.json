@@ -1,0 +1,86 @@
+{
+  "zone1dateset": [
+    {
+      "text": "Dans la cour",
+      "audio": "./assets/lesphrases/sound/combination/B_DansLaCour.mp3"
+    },
+    {
+      "text": "Chez moi",
+      "audio": "./assets/lesphrases/sound/combination/B_ChezMoi.mp3"
+    },
+    {
+      "text": "Pendant les vacances",
+      "audio": "./assets/lesphrases/sound/combination/B_PendantLesVacances.mp3"
+    },
+    {
+      "text": "Sous un arbre",
+      "audio": "./assets/lesphrases/sound/combination/B_SousUnArbre.mp3"
+    },
+    {
+      "text": "Sous un arbre",
+      "audio": "./assets/lesphrases/sound/combination/B_SousUnArbre.mp3"
+    },
+    {
+      "text": "Derrière ma maison",
+      "audio": "./assets/lesphrases/sound/combination/B_DerriereMaMaison.mp3"
+    }
+  ],
+  "zone2dateset": [
+    {
+      "text": "je mange",
+      "audio": "./assets/lesphrases/sound/combination/C_JeMange.mp3"
+    },
+    {
+      "text": "je croque",
+      "audio": "./assets/lesphrases/sound/combination/C_JeCroque.mp3"
+    },
+    {
+      "text": "j’arrose",
+      "audio": "./assets/lesphrases/sound/combination/C_Jarrose.mp3"
+    },
+    {
+      "text": "je casse",
+      "audio": "./assets/lesphrases/sound/combination/C_JeCasse.mp3"
+    },
+    {
+      "text": "je range",
+      "audio": "./assets/lesphrases/sound/combination/C_JeRange.mp3"
+    }
+  ],
+  "zone3dateset": [
+    {
+      "audio": "./assets/common/sound/variable_03/Telephone.mp3",
+      "image": "./assets/common/cards/Citron.png"
+    },
+    {
+      "audio": "./assets/common/sound/variable_03/Biscotte.mp3",
+      "image": "./assets/common/cards/Baignoire.png"
+    },
+    {
+      "audio": "./assets/common/sound/variable_03/Lunettes.mp3",
+      "image": "./assets/common/cards/Couvert.png"
+    },
+    {
+      "audio": "./assets/common/sound/variable_03/Bananes.mp3",
+      "image": "./assets/common/cards/Bottes.png"
+    }
+  ],
+  "audioLibrary1": [
+    "./assets/lesphrases/sound/combination/F_rires2.mp3",
+    "./assets/lesphrases/sound/combination/F_rires7.mp3",
+    "./assets/lesphrases/sound/combination/F_rires8.mp3",
+    "./assets/lesphrases/sound/combination/F_rires9.mp3",
+    "./assets/lesphrases/sound/combination/F_rires10.mp3",
+    "./assets/lesphrases/sound/combination/F_rires11.mp3",
+    "./assets/lesphrases/sound/combination/F_rires13.mp3",
+    "./assets/lesphrases/sound/combination/F_rires15.mp3"
+  ],
+  "audioLibrary2": [
+    "./assets/lesphrases/sound/combination/G_CestCompletementToque.mp3",
+    "./assets/lesphrases/sound/combination/G_CestCompletementToque_ALT.mp3",
+    "./assets/lesphrases/sound/combination/G_IlEstDrole.mp3",
+    "./assets/lesphrases/sound/combination/G_MaisQuelCoquin.mp3",
+    "./assets/lesphrases/sound/combination/G_OhMaisCaVaPas.mp3",
+    "./assets/lesphrases/sound/combination/G_OhMaisCaVaPasLaTete.mp3"
+  ]
+}
