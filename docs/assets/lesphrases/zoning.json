@@ -61,28 +61,28 @@
     "x": 714,
     "y": 1040,
     "width": 740,
-    "height": 611
+    "height": 714
   },
   "zone2": {
     "x": 1457,
     "y": 1040,
     "width": 740,
-    "height": 611
+    "height": 714
   },
   "zone3": {
     "x": 2190,
     "y": 1040,
     "width": 740,
-    "height": 611
+    "height": 714
   },
   "zone1Btn": {
-    "x": 1040,
-    "y": 1715,
+    "x": 1038,
+    "y": 1713,
     "width": 100,
     "height": 100
   },
   "zone2Btn": {
-    "x": 1778,
+    "x": 1780,
     "y": 1715,
     "width": 100,
     "height": 100

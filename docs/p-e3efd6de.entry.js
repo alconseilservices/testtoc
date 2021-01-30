@@ -1,6 +1,6 @@
 import { r as e, d as t, h as i } from "./p-f68e5270.js";
 
-import { a } from "./p-8995dd33.js";
+import { a } from "./p-5fd490aa.js";
 
 /**
  *
@@ -18,7 +18,7 @@ import { a } from "./p-8995dd33.js";
 const n = class {
   constructor(i) {
     e(this, i), this.breakpointReached = t(this, "breakpointReached", 7), this.animationFinished = t(this, "animationFinished", 7), 
-    this.ready = t(this, "ready", 7), 
+    this.ready = t(this, "ready", 7), this.ignoreSoundEffect = !1, 
     /**
      *
      * @private
@@ -98,7 +98,7 @@ const n = class {
     if (this.timeWhenLastUpdate || (this.timeWhenLastUpdate = e), this.timeFromLastUpdate = e - this.timeWhenLastUpdate, 
     this.timeFromLastUpdate > t.timePerFrame) if (
     // console.log(`refreshAnim=${this.pngframes[this.frameNumber].sequenceId},at=${now},startTime=${startTime}`)
-    this.showFrame(this.frameNumber), this.playSoundEffect(), 
+    this.showFrame(this.frameNumber), this.ignoreSoundEffect || this.playSoundEffect(), 
     // console.log(`show frame ${currentFrame.frameSequenceIndex} ${currentFrame.imagePath.substring(currentFrame.imagePath.lastIndexOf('/') +1)}`);
     this.timeWhenLastUpdate = e, this.frameNumber + 1 < this.pngframes.length) {
       if (this.frameNumber = this.frameNumber + 1, this.pngframes[this.frameNumber].breakpoint && this.exitOnBreakpoint) 
@@ -113,12 +113,10 @@ const n = class {
    *
    */  async stop() {
     // console.log(`stop executed : sequenceId=${this.pngframes[this.frameNumber].sequenceId}, exitOnBreakpoint=${this.exitOnBreakpoint}, loop=${this.loop}`);
-    return this.stopRequested = !0, this.animationId && (cancelAnimationFrame(this.animationId), 
-    this.animationId = null), new Promise((e => {
-      setTimeout((() => {
-        this.animationId && (cancelAnimationFrame(this.animationId), this.animationId = null), 
-        this.timeWhenLastUpdate = null, this.playing = !1, this.stopRequested = !1, e(null);
-      }), 100);
+    return new Promise((e => {
+      this.stopRequested = !0, this.animationId && (cancelAnimationFrame(this.animationId), 
+      this.animationId = null), this.timeWhenLastUpdate = null, this.playing = !1, this.stopRequested = !1, 
+      e(null);
     }));
   }
   /**

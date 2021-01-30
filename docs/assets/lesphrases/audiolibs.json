@@ -1,0 +1,20 @@
+{
+  "audioLibrary1": [
+    "./assets/lesphrases/sound/combination/F_rires2.mp3",
+    "./assets/lesphrases/sound/combination/F_rires7.mp3",
+    "./assets/lesphrases/sound/combination/F_rires8.mp3",
+    "./assets/lesphrases/sound/combination/F_rires9.mp3",
+    "./assets/lesphrases/sound/combination/F_rires10.mp3",
+    "./assets/lesphrases/sound/combination/F_rires11.mp3",
+    "./assets/lesphrases/sound/combination/F_rires13.mp3",
+    "./assets/lesphrases/sound/combination/F_rires15.mp3"
+  ],
+  "audioLibrary2": [
+    "./assets/lesphrases/sound/combination/G_CestCompletementToque.mp3",
+    "./assets/lesphrases/sound/combination/G_CestCompletementToque_ALT.mp3",
+    "./assets/lesphrases/sound/combination/G_IlEstDrole.mp3",
+    "./assets/lesphrases/sound/combination/G_MaisQuelCoquin.mp3",
+    "./assets/lesphrases/sound/combination/G_OhMaisCaVaPas.mp3",
+    "./assets/lesphrases/sound/combination/G_OhMaisCaVaPasLaTete.mp3"
+  ]
+}

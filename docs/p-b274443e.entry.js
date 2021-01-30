@@ -2,7 +2,7 @@ import { r as t, h as e, c as i } from "./p-f68e5270.js";
 
 import { b as s, a as n } from "./p-ab28ff84.js";
 
-import { Z as o, a } from "./p-8995dd33.js";
+import { Z as o, a } from "./p-5fd490aa.js";
 
 import { f as r, s as c } from "./p-ed3d6334.js";
 
@@ -48,7 +48,7 @@ const d = class {
     this.mascotEffect = [ "mascotsurprise", "mascotrire" ];
   }
   componentWillLoad() {
-    a.mute(!0);
+    a.mute(!0), this.zoning.cardsList.imageLibrary.forEach((t => t.sound = a.register("lm", t.sound)));
   }
   render() {
     return e("div", {
@@ -84,6 +84,7 @@ const d = class {
     }, e("png-player-component", {
       ref: t => this.conveyorBelt = t,
       onReady: () => this.handleReadyEvent(),
+      ignoreSoundEffect: !0,
       zone: this.zoning.conveyorBelt
     })), e("div", {
       class: "les-mots-toctoc-cards-list",
@@ -132,9 +133,7 @@ const d = class {
    */  handleReadyEvent() {
     this.readyEventCount++ >= this.expectedReadyEventCount && setTimeout((async () => {
       await this.moveOnConveyor(), this.loaderRef.style.display = "none", a.mute(!1), 
-      this.attachListeners(), 
-      // this.inactivityDetector.activate();
-      setTimeout((() => this.mascot.playSequence("mascotcoucou")), 2e3);
+      this.attachListeners(), this.inactivityDetector.activate(), setTimeout((() => this.mascot.playSequence("mascotcoucou")), 2e3);
     }), 300);
   }
   /**
@@ -182,12 +181,13 @@ const d = class {
     const t = this.cardsList.getBoundingClientRect(), e = this.conveyorBeltContainer.getBoundingClientRect();
     this.cardInViewIndex++;
     let i = r(".card-index-" + (this.cardInViewIndex - 1), this.cardsList), s = r(".card-index-" + this.cardInViewIndex, this.cardsList), n = r(".card-index-" + (this.cardInViewIndex + 1), this.cardsList), o = r(".card-index-" + (this.cardInViewIndex + 2), this.cardsList);
-    this.initDone || (o = n, n = s, s = null, this.cardInViewIndex--, this.initDone = !0), 
+    this.initDone || (o = n, n = s, s = null, this.cardInViewIndex--, this.initDone = !0);
+    const h = a.playAndGetRef("conveyorBelt", {});
     requestAnimationFrame(this.conveyorBelt.playAndLoop.bind(this.conveyorBelt)), i && i.classList.add("hide"), 
     s && this.attachCardMotionClassAndMove(s, this.initDone ? "2s" : "3s", t.width - t.height + "px"), 
     this.initDone || await c(1e3), n && this.attachCardMotionClassAndMove(n, "2s", e.width - t.height + "px"), 
     await c(1e3), o && this.attachCardMotionClassAndMove(o, "2s", "0px"), this.initDone, 
-    await c(2e3), this.conveyorBelt.stop(), this.lastCard = !n && !o, this.selectedCard = s;
+    await c(2e3), h.stop(), this.conveyorBelt.stop(), this.lastCard = !n && !o, this.selectedCard = s;
   }
   /**
    *
@@ -233,7 +233,7 @@ const d = class {
    *
    */  onStrainerBreakpointReached(t) {
     // this.strainer.removeEventListener('breakpointReached', this.onStrainerBreakpointReached.bind(this));
-    console.log("get notified for breakpoint=" + t.detail), t.detail.startsWith("steinerup-0-") && requestAnimationFrame(this.hammer.play.bind(this.hammer));
+    t.detail.startsWith("steinerup-0-") && requestAnimationFrame(this.hammer.play.bind(this.hammer));
   }
   /**
    *
@@ -247,29 +247,15 @@ const d = class {
     // this.strainer.removeEventListener('animationFinished', this.onStrainerAnimationFinished.bind(this));
     this.wordPanel.innerHTML = this.selectedCard.dataset.imageName;
     const t = this.zoning.cardsList.imageLibrary.find((t => t.name === this.selectedCard.dataset.imageName));
-    t.sound && a.play(t.sound.substring(t.sound.lastIndexOf("/") + 1).replace(".mp3", "")), 
-    this.setWordFontSize(!0), this.animationInProgress = !1, setTimeout((() => {
+    a.play(t.sound), this.setWordFontSize(!0), this.animationInProgress = !1, setTimeout((() => {
       this.mascot.playSequence(this.mascotEffect[Math.floor(Math.random() * this.mascotEffect.length)]);
-    }), 1e3), this.activityDetectorTimer = setTimeout((() => this.inactivityDetector.activate()), 2e3), 
-    setTimeout((() => {
-      if (this.lastCard) {
-        this.wordPanel.innerHTML = "", this.setWordFontSize(!1);
-        const t = this.cardsList.getBoundingClientRect();
-        this.cardsList.querySelectorAll(".les-mots-toctoc-card").forEach((e => {
-          e.classList.add("hide"), e.style.left = "-" + t.height + "px";
-        })), this.cardInViewIndex = -1, this.lastCard = !1, this.moveOnConveyor(), setTimeout((() => {
-          this.cardsList.querySelectorAll(".les-mots-toctoc-card").forEach((t => {
-            t.classList.remove("hide");
-          }));
-        }), 3e3);
-      }
-    }), 2e3);
+    }), 1e3), this.activityDetectorTimer = setTimeout((() => this.inactivityDetector.activate()), 2e3);
   }
   static get assetsDirs() {
     return [ "assets" ];
   }
 };
 
-d.style = ".les-mots-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-mots-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-mots-toctoc-conveyor-belt{position:absolute}.les-mots-toctoc-mascot{position:absolute;border-radius:50%}.les-mots-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-mots-toctoc-back-btn:hover{transform:scale(1.2)}.les-mots-toctoc-word-panel{font-family:'Museo 300';position:absolute;text-align:center;transition:font-size .3s linear}.les-mots-toctoc-hammer{position:absolute;cursor:pointer}.les-mots-toctoc-hammer-btn{position:absolute;background-color:rgb(221, 42, 0);border-radius:50%}.les-mots-toctoc-strainer{position:absolute}.les-mots-toctoc-cards-list::-webkit-scrollbar{display:none}.les-mots-toctoc-cards-list{position:absolute;overflow:hidden}.les-mots-toctoc-card{position:absolute;width:auto;height:100%;-webkit-transition:all 1s linear;-moz-transition:all 1s linear;-o-transition:all 1s linear;-ms-transition:all 1s linear;transition:all 1s linear}.les-mots-toctoc-card-motion-1s{-webkit-transition:left 1s linear;-moz-transition:left 1s linear;-o-transition:left 1s linear;-ms-transition:left 1s linear;transition:left 1s linear}.les-mots-toctoc-card-motion-1s5{-webkit-transition:left 1.5s linear;-moz-transition:left 1.5s linear;-o-transition:left 1.5s linear;-ms-transition:left 1.5s linear;transition:left 1.5s linear}.les-mots-toctoc-card-motion-2s{-webkit-transition:left 2s linear;-moz-transition:left 2s linear;-o-transition:left 2s linear;-ms-transition:left 2s linear;transition:left 2s linear}.les-mots-toctoc-card-motion-3s{-webkit-transition:left 3s linear;-moz-transition:left 3s linear;-o-transition:left 3s linear;-ms-transition:left 3s linear;transition:left 3s linear}";
+d.style = ".les-mots-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-mots-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-mots-toctoc-conveyor-belt{position:absolute}.les-mots-toctoc-mascot{position:absolute;border-radius:50%}.les-mots-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-mots-toctoc-back-btn:hover{transform:scale(1.2)}.les-mots-toctoc-word-panel{color:white;font-family:'Museo 300';position:absolute;text-align:center;transition:font-size .3s linear}.les-mots-toctoc-hammer{position:absolute;cursor:pointer}.les-mots-toctoc-hammer-btn{position:absolute;background-color:rgb(221, 42, 0);border-radius:50%}.les-mots-toctoc-strainer{position:absolute}.les-mots-toctoc-cards-list::-webkit-scrollbar{display:none}.les-mots-toctoc-cards-list{position:absolute;overflow:hidden}.les-mots-toctoc-card{position:absolute;width:auto;height:100%;-webkit-transition:all 1s linear;-moz-transition:all 1s linear;-o-transition:all 1s linear;-ms-transition:all 1s linear;transition:all 1s linear}.les-mots-toctoc-card-motion-1s{-webkit-transition:left 1s linear;-moz-transition:left 1s linear;-o-transition:left 1s linear;-ms-transition:left 1s linear;transition:left 1s linear}.les-mots-toctoc-card-motion-1s5{-webkit-transition:left 1.5s linear;-moz-transition:left 1.5s linear;-o-transition:left 1.5s linear;-ms-transition:left 1.5s linear;transition:left 1.5s linear}.les-mots-toctoc-card-motion-2s{-webkit-transition:left 2s linear;-moz-transition:left 2s linear;-o-transition:left 2s linear;-ms-transition:left 2s linear;transition:left 2s linear}.les-mots-toctoc-card-motion-3s{-webkit-transition:left 3s linear;-moz-transition:left 3s linear;-o-transition:left 3s linear;-ms-transition:left 3s linear;transition:left 3s linear}";
 
 export { d as les_mots_toctoc }

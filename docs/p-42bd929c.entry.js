@@ -1,6 +1,6 @@
 import { r as t, h as e } from "./p-f68e5270.js";
 
-import { a as i } from "./p-8995dd33.js";
+import { a as i } from "./p-5fd490aa.js";
 
 const o = class {
   constructor(e) {
@@ -10,6 +10,23 @@ const o = class {
    *
    */  componentWillLoad() {
     this.voicedText ? this.voicedText.forEach((t => t.audio = i.register("rd", t.audio))) : this.voicedImage.forEach((t => t.audio = i.register("rd", t.audio)));
+  }
+  /**
+   *
+   * @param _evt
+   */  onWindowResize(t) {
+    this.computeFontSize();
+  }
+  /**
+   *
+   */  componentDidLoad() {
+    this.computeFontSize();
+  }
+  /**
+   *
+   */  computeFontSize() {
+    const t = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    this.randomizerContainer.querySelectorAll(".toctoc-randomizer-text").forEach((e => e.style.fontSize = .018 * t + "px"));
   }
   /**
    *
@@ -82,6 +99,6 @@ const o = class {
   }
 };
 
-o.style = ".toctoc-randomizer-container{width:100%;height:100%;position:relative}.toctoc-randomizer-text{font-family:'Museo 300';font-size:25px;font-weight:bold;position:absolute;opacity:0;top:50%;left:50%;transform:translate(-50%, -50%);white-space:nowrap}.toctoc-randomizer-image{position:absolute;opacity:0;top:50%;left:50%;transform:translate(-50%, -50%);width:70%;height:auto}";
+o.style = ".toctoc-randomizer-container{width:100%;height:100%;position:relative}.toctoc-randomizer-text{color:rgba(0, 0, 0, .8);font-family:'Museo 300';font-size:25px;font-weight:bold;position:absolute;opacity:0;top:50%;left:50%;transform:translate(-50%, -50%);white-space:nowrap}.toctoc-randomizer-image{position:absolute;opacity:0;top:50%;left:50%;transform:translate(-50%, -50%);width:60%;height:auto}";
 
 export { o as toctoc_randomizer_component }

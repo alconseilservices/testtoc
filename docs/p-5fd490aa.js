@@ -98,106 +98,103 @@ const e = {
     height: 500,
     imageLibrary: [ {
       name: "Une girafe",
-      sound: "./assets/common/sound/variable_03/Girafe.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Girafe.mp3",
       image: "./assets/common/cards/Horloge.png"
     }, {
       name: "Une biscotte",
-      sound: "./assets/common/sound/variable_03/Biscotte.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Biscotte.mp3",
       image: "./assets/common/cards/Baignoire.png"
     }, {
       name: "Un crocodile",
-      sound: "./assets/common/sound/variable_03/Crocodile.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Crocodile.mp3",
       image: "./assets/common/cards/Trompette.png"
     }, {
       name: "Un vélo",
-      sound: "./assets/common/sound/variable_03/Velo.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Velo.mp3",
       image: "./assets/common/cards/Maillot.png"
     }, {
       name: "Une courgette",
-      sound: "./assets/common/sound/variable_03/Courgette.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Courgette.mp3",
       image: "./assets/common/cards/Voilier.png"
     }, {
       name: "Un brosse à dents",
-      sound: "./assets/common/sound/variable_03/BrosseADents.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/BrosseADents.mp3",
       image: "./assets/common/cards/Moto.png"
     }, {
       name: "Un rhinocéros",
-      sound: "./assets/common/sound/variable_03/Rhinoceros.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Rhinoceros.mp3",
       image: "./assets/common/cards/Arbre.png"
     }, {
-      name: "Une casserole",
-      image: "./assets/common/cards/Chateau.png"
-    }, {
       name: "Des fraises",
-      sound: "./assets/common/sound/variable_03/Fraises.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Fraises.mp3",
       image: "./assets/common/cards/Crayon.png"
     }, {
       name: "Un tracteur",
-      sound: "./assets/common/sound/variable_03/Tracteur.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Tracteur.mp3",
       image: "./assets/common/cards/Nuage.png"
     }, {
       name: "Des lunettes",
-      sound: "./assets/common/sound/variable_03/Lunettes.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Lunettes.mp3",
       image: "./assets/common/cards/Couvert.png"
     }, {
       name: "Un fromage",
-      sound: "./assets/common/sound/variable_03/Fromage.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Fromage.mp3",
       image: "./assets/common/cards/Camion.png"
     }, {
       name: "Une vache",
-      sound: "./assets/common/sound/variable_03/Vache.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Vache.mp3",
       image: "./assets/common/cards/Maison.png"
     }, {
       name: "un lapin",
-      sound: "./assets/common/sound/variable_03/Lapin.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Lapin.mp3",
       image: "./assets/common/cards/Ballon.png"
     }, {
       name: "Une trottinette",
-      sound: "./assets/common/sound/variable_03/Trotinette.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Trotinette.mp3",
       image: "./assets/common/cards/Pomme.png"
     }, {
       name: "Un avion",
-      sound: "./assets/common/sound/variable_03/Avion.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Avion.mp3",
       image: "./assets/common/cards/Chien.png"
     }, {
       name: "Un hippopotame",
-      sound: "./assets/common/sound/variable_03/Hipopotame.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Hipopotame.mp3",
       image: "./assets/common/cards/Sapin.png"
     }, {
       name: "Des fleurs",
-      sound: "./assets/common/sound/variable_03/Fleurs.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Fleurs.mp3",
       image: "./assets/common/cards/Gants.png"
     }, {
       name: "Un pyjama",
-      sound: "./assets/common/sound/variable_03/Pyjama.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Pyjama.mp3",
       image: "./assets/common/cards/Oiseau.png"
     }, {
       name: "Un piano",
-      sound: "./assets/common/sound/variable_03/Piano.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Piano.mp3",
       image: "./assets/common/cards/Tortue.png"
     }, {
       name: "Un parapluie",
-      sound: "./assets/common/sound/variable_03/Parapluie.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Parapluie.mp3",
       image: "./assets/common/cards/De.png"
     }, {
       name: "Un chapeau",
-      sound: "./assets/common/sound/variable_03/Chapeau.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Chapeau.mp3",
       image: "./assets/common/cards/Passoire.png"
     }, {
       name: "Un téléphone",
-      sound: "./assets/common/sound/variable_03/Telephone.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Telephone.mp3",
       image: "./assets/common/cards/Citron.png"
     }, {
       name: "Une tomate",
-      sound: "./assets/common/sound/variable_03/Tomate.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Tomate.mp3",
       image: "./assets/common/cards/Ciseaux.png"
     }, {
       name: "Des bananes",
-      sound: "./assets/common/sound/variable_03/Bananes.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Bananes.mp3",
       image: "./assets/common/cards/Bottes.png"
     }, {
       name: "Une grenouille",
-      sound: "./assets/common/sound/variable_03/Grenouille.mp3",
+      sound: "./assets/lesphrases/sound/variable_03/Grenouille.mp3",
       image: "./assets/common/cards/Couronne.png"
     } ]
   },
@@ -207,12 +204,12 @@ const e = {
     width: 1330,
     height: 190
   }
-}, o = window.createjs;
+}, a = window.createjs;
 
 /**
  *
  */
-const a = new 
+const o = new 
 /**
  *
  */
@@ -224,41 +221,57 @@ class {
     /**
      *
      */
-    this.lesMotsTocZoning = e, o.Sound.registerPlugins([ o.WebAudioPlugin, o.HTMLAudioPlugin ]), 
-    o.Sound.alternateExtensions = [ "mp3" ], o.Sound.registerSound(s("./assets/home/bouton1.mp3"), "bouton1"), 
-    o.Sound.registerSound(s("./assets/home/bouton2.mp3"), "bouton2"), o.Sound.registerSound(s("./assets/home/bouton3.mp3"), "bouton2"), 
-    o.Sound.registerSound(s("./assets/home/pouet_pouet.mp3"), "pouet"), o.Sound.registerSound(s("./assets/lesmots/sound/marteau.mp3"), "hammer"), 
-    o.Sound.registerSound(s("./assets/lesmots/sound/passoire.mp3"), "steinerdown"), 
-    o.Sound.registerSound(s("./assets/lesmots/sound/passoire_monte.mp3"), "steinerup"), 
-    o.Sound.registerSound(s("./assets/lesmots/sound/tapis_roulant.mp3"), "conveyorBelt"), 
-    o.Sound.registerSound(s("./assets/common/sound/F_rires10.mp3"), "rires10"), o.Sound.registerSound(s("./assets/lesphrases/sound/bras_machine.mp3"), "bras_machine");
-    for (let e = 0; e < this.lesMotsTocZoning.cardsList.imageLibrary.length; e++) {
-      const a = this.lesMotsTocZoning.cardsList.imageLibrary[e];
-      a.sound && o.Sound.registerSound(s(a.sound), a.sound.substring(a.sound.lastIndexOf("/") + 1).replace(".mp3", ""));
+    this.lesMotsTocZoning = e, this.registeredIds = [], a.Sound.registerPlugins([ a.WebAudioPlugin, a.HTMLAudioPlugin ]), 
+    a.Sound.alternateExtensions = [ "mp3" ], a.Sound.registerSound(s("./assets/home/bouton1.mp3"), "bouton1"), 
+    a.Sound.registerSound(s("./assets/home/bouton2.mp3"), "bouton2"), a.Sound.registerSound(s("./assets/home/bouton3.mp3"), "bouton2"), 
+    a.Sound.registerSound(s("./assets/home/pouet_pouet.mp3"), "pouet"), a.Sound.registerSound(s("./assets/lesmots/sound/marteau.mp3"), "hammer"), 
+    a.Sound.registerSound(s("./assets/lesmots/sound/passoire.mp3"), "steinerdown"), 
+    a.Sound.registerSound(s("./assets/lesmots/sound/passoire_monte.mp3"), "steinerup"), 
+    a.Sound.registerSound(s("./assets/lesmots/sound/tapis_roulant.mp3"), "conveyorBelt"), 
+    a.Sound.registerSound(s("./assets/common/sound/F_rires10.mp3"), "rires10"), a.Sound.registerSound(s("./assets/lesphrases/sound/bras_machine.mp3"), "bras_machine");
+  }
+  /**
+   *
+   * @param doMute
+   */  register(e, o) {
+    try {
+      if (o.startsWith(e + "_")) return o;
+      {
+        const n = e + "_" + o.substring(o.lastIndexOf("/") + 1).replace(".mp3", "");
+        let t = this.registeredIds.find((s => s === n));
+        return !t && o.endsWith(".mp3") && (a.Sound.registerSound(s(o), n), this.registeredIds.push(n), 
+        t = n), t;
+      }
+    } catch (s) {
+      console.log(`ns: ${e}, audio: ${o}`, s);
     }
   }
   /**
    *
    * @param doMute
-   */  register(e, a) {
-    const n = e + "_" + a.substring(a.lastIndexOf("/") + 1).replace(".mp3", "");
-    return console.log(n), o.Sound.registerSound(s(a), n), n;
+   */  mute(s) {
+    a.Sound.muted = !!s;
   }
   /**
    *
    * @param doMute
-   */  mute(s) {
-    o.Sound.muted = !!s;
+   */  stop(s) {
+    a.Sound.muted = !!s;
+  }
+  /**
+   *
+   */  playAndGetRef(s, e) {
+    return a.Sound.play(s, e);
   }
   /**
    *
    */  play(s) {
     return new Promise((e => {
-      o.Sound.play(s).on("complete", (() => {
+      a.Sound.play(s).on("complete", (() => {
         e(!0);
       }));
     }));
   }
 };
 
-export { e as Z, a }
+export { e as Z, o as a }

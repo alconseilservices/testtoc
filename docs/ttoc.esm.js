@@ -1,15 +1,17 @@
-import { p as e, b as t } from "./p-f68e5270.js";
+import { p as e, b as o } from "./p-f68e5270.js";
+
+import { g as t } from "./p-2d4e664e.js";
 
 /*
  Stencil Client Patch Browser v2.3.0 | MIT Licensed | https://stenciljs.com
  */ (() => {
-  const t = import.meta.url, o = {};
-  return "" !== t && (o.resourcesUrl = new URL(".", t).href), e(o);
-})().then((e => t([ [ "p-b9e606e3", [ [ 0, "les-phrases-toctoc", {
+  const o = import.meta.url, t = {};
+  return "" !== o && (t.resourcesUrl = new URL(".", o).href), e(t);
+})().then((e => (t(), o([ [ "p-8e7910bb", [ [ 0, "les-phrases-toctoc", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-bfdc1f70", [ [ 0, "les-mots-toctoc", {
+}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-b274443e", [ [ 0, "les-mots-toctoc", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-d79b750a", [ [ 0, "app-home", {
+}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-f1792c2b", [ [ 0, "app-home", {
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-3bee3548", [ [ 0, "context-consumer", {
   context: [ 16 ],
@@ -51,14 +53,15 @@ import { p as e, b as t } from "./p-f68e5270.js";
   history: [ 16 ],
   root: [ 1 ],
   url: [ 1 ]
-} ] ] ], [ "p-b10be37c", [ [ 0, "toctoc-randomizer-component", {
+} ] ] ], [ "p-42bd929c", [ [ 0, "toctoc-randomizer-component", {
   voicedText: [ 16 ],
   voicedImage: [ 16 ],
   stop: [ 64 ],
   playAudio: [ 64 ],
   start: [ 64 ]
-} ] ] ], [ "p-a0a0d1e1", [ [ 0, "png-player-component", {
+}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-e3efd6de", [ [ 0, "png-player-component", {
   zone: [ 16 ],
+  ignoreSoundEffect: [ 4, "ignore-sound-effect" ],
   heightAuto: [ 4, "height-auto" ],
   playSequence: [ 64 ],
   playAndExitOnBreakpoint: [ 64 ],
@@ -94,4 +97,4 @@ import { p as e, b as t } from "./p-f68e5270.js";
   scrollTopOffset: [ 2, "scroll-top-offset" ],
   location: [ 32 ],
   history: [ 32 ]
-} ] ] ] ], e)));
+} ] ] ] ], e))));
