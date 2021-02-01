@@ -14,16 +14,18 @@ const e = {
       id: "mascotdoigt",
       pathPrefix: "./assets/common/anim/mascotte/mascotte_doigt/Mascotte_Doigt_",
       totalFrames: 75,
-      animationDurationMs: 1e3
+      animationDurationMs: 1e3,
+      soundEffect: "mascotte_doigt"
     }, {
       id: "mascotrire",
       pathPrefix: "./assets/common/anim/mascotte/mascotte_rire/Mascotte_Rire_",
       totalFrames: 100,
-      soundEffect: "rires10"
+      soundEffect: "mascotte_rire"
     }, {
       id: "mascotsurprise",
       pathPrefix: "./assets/common/anim/mascotte/mascotte_surprise/Mascotte_Surprise_",
-      totalFrames: 75
+      totalFrames: 75,
+      soundEffect: "mascotte_surprise"
     } ],
     animationDurationMs: 2e3
   },
@@ -228,7 +230,10 @@ class {
     a.Sound.registerSound(s("./assets/lesmots/sound/passoire.mp3"), "steinerdown"), 
     a.Sound.registerSound(s("./assets/lesmots/sound/passoire_monte.mp3"), "steinerup"), 
     a.Sound.registerSound(s("./assets/lesmots/sound/tapis_roulant.mp3"), "conveyorBelt"), 
-    a.Sound.registerSound(s("./assets/common/sound/F_rires10.mp3"), "rires10"), a.Sound.registerSound(s("./assets/lesphrases/sound/bras_machine.mp3"), "bras_machine");
+    a.Sound.registerSound(s("./assets/common/sound/F_rires10.mp3"), "rires10"), a.Sound.registerSound(s("./assets/lesphrases/sound/bras_machine.mp3"), "bras_machine"), 
+    a.Sound.registerSound(s("./assets/common/sound/mascotte/mascotte_doigt.mp3"), "mascotte_doigt"), 
+    a.Sound.registerSound(s("./assets/common/sound/mascotte/mascotte_rire.mp3"), "mascotte_rire"), 
+    a.Sound.registerSound(s("./assets/common/sound/mascotte/mascotte_surprise.mp3"), "mascotte_surprise");
   }
   /**
    *
@@ -237,10 +242,10 @@ class {
     try {
       if (o.startsWith(e + "_")) return o;
       {
-        const n = e + "_" + o.substring(o.lastIndexOf("/") + 1).replace(".mp3", "");
-        let t = this.registeredIds.find((s => s === n));
-        return !t && o.endsWith(".mp3") && (a.Sound.registerSound(s(o), n), this.registeredIds.push(n), 
-        t = n), t;
+        const t = e + "_" + o.substring(o.lastIndexOf("/") + 1).replace(".mp3", "");
+        let n = this.registeredIds.find((s => s === t));
+        return !n && o.endsWith(".mp3") && (a.Sound.registerSound(s(o), t), this.registeredIds.push(t), 
+        n = t), n;
       }
     } catch (s) {
       console.log(`ns: ${e}, audio: ${o}`, s);

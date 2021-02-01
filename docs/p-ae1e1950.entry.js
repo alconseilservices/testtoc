@@ -2,7 +2,7 @@ import { r as s, h as e, c as a } from "./p-f68e5270.js";
 
 import { b as t, a as o } from "./p-ab28ff84.js";
 
-import { a as i } from "./p-5fd490aa.js";
+import { a as i } from "./p-1c5edcf0.js";
 
 import { s as n } from "./p-ed3d6334.js";
 
@@ -32,16 +32,18 @@ const r = {
       id: "mascotdoigt",
       pathPrefix: "./assets/common/anim/mascotte/mascotte_doigt/Mascotte_Doigt_",
       totalFrames: 75,
-      animationDurationMs: 1e3
+      animationDurationMs: 1e3,
+      soundEffect: "mascotte_doigt"
     }, {
       id: "mascotrire",
       pathPrefix: "./assets/common/anim/mascotte/mascotte_rire/Mascotte_Rire_",
       totalFrames: 100,
-      soundEffect: "rires10"
+      soundEffect: "mascotte_rire"
     }, {
       id: "mascotsurprise",
       pathPrefix: "./assets/common/anim/mascotte/mascotte_surprise/Mascotte_Surprise_",
-      totalFrames: 75
+      totalFrames: 75,
+      soundEffect: "mascotte_surprise"
     } ],
     animationDurationMs: 2e3
   },
@@ -524,7 +526,7 @@ const r = {
   /**
    *
    */  playMascotEffect() {
-    this.mascot.playSequence(this.mascotEffect[Math.floor(Math.random() * this.mascotEffect.length)]);
+    this.mascot.playSequence(this.mascotEffect[Math.floor(Math.random() * this.mascotEffect.length)], !0);
   }
   static get assetsDirs() {
     return [ "assets" ];

@@ -2,9 +2,9 @@ import { r as t, h as o, c as s } from "./p-f68e5270.js";
 
 import { z as e, a as i } from "./p-ab28ff84.js";
 
-import { a as n } from "./p-5fd490aa.js";
+import { a as n } from "./p-1c5edcf0.js";
 
-const a = {
+const c = {
   playBtn1: {
     x: 1240,
     y: 1691,
@@ -26,9 +26,9 @@ const a = {
     height: 621,
     image: "TocToc_Menu_Mascotte.png"
   }
-}, c = class {
+}, a = class {
   constructor(o) {
-    t(this, o), this.zoning = a;
+    t(this, o), this.zoning = c;
   }
   /**
    *
@@ -101,6 +101,6 @@ const a = {
   }
 };
 
-c.style = ".toc-toc-menu{position:relative;background-color:rgb(255, 254, 240);height:100%}.toc-toc-menu-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.toc-toc-menu-play{position:absolute;cursor:pointer}.toc-toc-menu-play:hover{transform:scale(1.2)}.toc-toc-menu-mascot{position:absolute}";
+a.style = ".toc-toc-menu{position:relative;background-color:rgb(255, 254, 240);height:100%}.toc-toc-menu-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.toc-toc-menu-play{position:absolute;cursor:pointer}.toc-toc-menu-play:hover{transform:scale(1.2)}.toc-toc-menu-mascot{position:absolute}";
 
-export { c as app_home }
+export { a as app_home }

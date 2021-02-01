@@ -14,18 +14,20 @@
         "id": "mascotdoigt",
         "pathPrefix": "./assets/common/anim/mascotte/mascotte_doigt/Mascotte_Doigt_",
         "totalFrames": 75,
-        "animationDurationMs": 1000
+        "animationDurationMs": 1000,
+        "soundEffect": "mascotte_doigt"
       },
       {
         "id": "mascotrire",
         "pathPrefix": "./assets/common/anim/mascotte/mascotte_rire/Mascotte_Rire_",
         "totalFrames": 100,
-        "soundEffect": "rires10"
+        "soundEffect": "mascotte_rire"
       },
       {
         "id": "mascotsurprise",
         "pathPrefix": "./assets/common/anim/mascotte/mascotte_surprise/Mascotte_Surprise_",
-        "totalFrames": 75
+        "totalFrames": 75,
+        "soundEffect": "mascotte_surprise"
       }
     ],
     "animationDurationMs": 2000

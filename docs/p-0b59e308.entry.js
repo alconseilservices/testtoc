@@ -2,7 +2,7 @@ import { r as t, h as e, c as i } from "./p-f68e5270.js";
 
 import { b as s, a as n } from "./p-ab28ff84.js";
 
-import { Z as o, a } from "./p-5fd490aa.js";
+import { Z as o, a } from "./p-1c5edcf0.js";
 
 import { f as r, s as c } from "./p-ed3d6334.js";
 
@@ -133,14 +133,14 @@ const d = class {
    */  handleReadyEvent() {
     this.readyEventCount++ >= this.expectedReadyEventCount && setTimeout((async () => {
       await this.moveOnConveyor(), this.loaderRef.style.display = "none", a.mute(!1), 
-      this.attachListeners(), this.inactivityDetector.activate(), setTimeout((() => this.mascot.playSequence("mascotcoucou")), 2e3);
+      this.attachListeners(), this.inactivityDetector.activate(), setTimeout((() => this.mascot.playSequence("mascotcoucou", !0)), 2e3);
     }), 300);
   }
   /**
    *
    */  createInactivityDectector() {
     this.inactivityDetector = new h(this.hammerBtn, 1e4, (() => {
-      this.hammerBtn.classList.add("bounce-effect"), this.mascot.playSequence("mascotdoigt");
+      this.hammerBtn.classList.add("bounce-effect"), this.mascot.playSequence("mascotdoigt", !0);
     }));
   }
   /**
@@ -248,7 +248,7 @@ const d = class {
     this.wordPanel.innerHTML = this.selectedCard.dataset.imageName;
     const t = this.zoning.cardsList.imageLibrary.find((t => t.name === this.selectedCard.dataset.imageName));
     a.play(t.sound), this.setWordFontSize(!0), this.animationInProgress = !1, setTimeout((() => {
-      this.mascot.playSequence(this.mascotEffect[Math.floor(Math.random() * this.mascotEffect.length)]);
+      this.mascot.playSequence(this.mascotEffect[Math.floor(Math.random() * this.mascotEffect.length)], !0);
     }), 1e3), this.activityDetectorTimer = setTimeout((() => this.inactivityDetector.activate()), 2e3);
   }
   static get assetsDirs() {
