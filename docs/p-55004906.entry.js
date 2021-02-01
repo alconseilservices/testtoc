@@ -2,7 +2,7 @@ import { r as s, h as e, c as a } from "./p-f68e5270.js";
 
 import { b as t, a as o } from "./p-ab28ff84.js";
 
-import { a as i } from "./p-1c5edcf0.js";
+import { a as i } from "./p-42aaab2d.js";
 
 import { s as n } from "./p-ed3d6334.js";
 
@@ -359,7 +359,9 @@ const r = {
       src: a("./assets/lesphrases/TocToc_Phrase.png")
     }), e("div", {
       class: "les-phrases-toctoc-back-btn",
-      onClick: this.history.goBack,
+      onClick: () => {
+        i.stop(), this.history.goBack();
+      },
       ref: s => this.backBtn = s
     }), e("div", {
       class: "les-phrases-toctoc-listen-btn",

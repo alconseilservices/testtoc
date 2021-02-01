@@ -2,7 +2,7 @@ import { r as t, h as e, c as i } from "./p-f68e5270.js";
 
 import { b as s, a as n } from "./p-ab28ff84.js";
 
-import { Z as o, a } from "./p-1c5edcf0.js";
+import { Z as o, a } from "./p-42aaab2d.js";
 
 import { f as r, s as c } from "./p-ed3d6334.js";
 
@@ -65,7 +65,9 @@ const d = class {
       src: i("./assets/lesmots/TocToc_Mot_Socle.png")
     }), e("div", {
       class: "les-mots-toctoc-back-btn",
-      onClick: this.history.goBack,
+      onClick: () => {
+        a.stop(), this.history.goBack();
+      },
       ref: t => this.backBtn = t
     }), e("div", {
       class: "les-mots-toctoc-mascot",
@@ -186,7 +188,7 @@ const d = class {
     requestAnimationFrame(this.conveyorBelt.playAndLoop.bind(this.conveyorBelt)), i && i.classList.add("hide"), 
     s && this.attachCardMotionClassAndMove(s, this.initDone ? "2s" : "3s", t.width - t.height + "px"), 
     this.initDone || await c(1e3), n && this.attachCardMotionClassAndMove(n, "2s", e.width - t.height + "px"), 
-    await c(1e3), o && this.attachCardMotionClassAndMove(o, "2s", "0px"), this.initDone, 
+    await c(100), o && this.attachCardMotionClassAndMove(o, "2s", "0px"), this.initDone, 
     await c(2e3), h.stop(), this.conveyorBelt.stop(), this.lastCard = !n && !o, this.selectedCard = s;
   }
   /**

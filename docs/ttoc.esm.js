@@ -7,11 +7,11 @@ import { g as t } from "./p-2d4e664e.js";
  */ (() => {
   const o = import.meta.url, t = {};
   return "" !== o && (t.resourcesUrl = new URL(".", o).href), e(t);
-})().then((e => (t(), o([ [ "p-ae1e1950", [ [ 0, "les-phrases-toctoc", {
+})().then((e => (t(), o([ [ "p-55004906", [ [ 0, "les-phrases-toctoc", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-0b59e308", [ [ 0, "les-mots-toctoc", {
+}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-1a5cba13", [ [ 0, "les-mots-toctoc", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-483ea672", [ [ 0, "app-home", {
+}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-d3b9b455", [ [ 0, "app-home", {
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-3bee3548", [ [ 0, "context-consumer", {
   context: [ 16 ],
@@ -53,13 +53,13 @@ import { g as t } from "./p-2d4e664e.js";
   history: [ 16 ],
   root: [ 1 ],
   url: [ 1 ]
-} ] ] ], [ "p-f6548a0c", [ [ 0, "toctoc-randomizer-component", {
+} ] ] ], [ "p-ea60b7ea", [ [ 0, "toctoc-randomizer-component", {
   voicedText: [ 16 ],
   voicedImage: [ 16 ],
   stop: [ 64 ],
   playAudio: [ 64 ],
   start: [ 64 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-028724a9", [ [ 0, "png-player-component", {
+}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-96d3b823", [ [ 0, "png-player-component", {
   zone: [ 16 ],
   ignoreSoundEffect: [ 4, "ignore-sound-effect" ],
   heightAuto: [ 4, "height-auto" ],
