@@ -6,10 +6,10 @@
     "height": 224
   },
   "listenBtn": {
-    "x": 1695,
-    "y": 588,
-    "width": 224,
-    "height": 224
+    "x": 1665,
+    "y": 527,
+    "width": 323,
+    "height": 323
   },
   "mascot": {
     "x": 2602,
@@ -57,7 +57,7 @@
         "soundEffect": "bras_machine"
       }
     ],
-    "animationDurationMs": 1000
+    "animationDurationMs": 800
   },
   "zone1": {
     "x": 714,
@@ -78,22 +78,22 @@
     "height": 714
   },
   "zone1Btn": {
-    "x": 1038,
-    "y": 1713,
-    "width": 100,
-    "height": 100
+    "x": 989,
+    "y": 1660,
+    "width": 202,
+    "height": 202
   },
   "zone2Btn": {
-    "x": 1780,
-    "y": 1715,
-    "width": 100,
-    "height": 100
+    "x": 1728,
+    "y": 1660,
+    "width": 202,
+    "height": 202
   },
   "zone3Btn": {
-    "x": 2518,
-    "y": 1715,
-    "width": 100,
-    "height": 100
+    "x": 2467,
+    "y": 1660,
+    "width": 202,
+    "height": 202
   }
 }
 

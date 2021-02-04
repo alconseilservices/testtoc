@@ -43,7 +43,7 @@ const e = {
   },
   conveyorBelt: {
     x: 0,
-    y: 1645,
+    y: 1647,
     width: 1080,
     height: 150,
     animation: [ {
@@ -96,8 +96,8 @@ const e = {
   cardsList: {
     x: 0,
     y: 1146,
-    width: 2100,
-    height: 500,
+    width: 2120,
+    height: 502,
     imageLibrary: [ {
       name: "Une girafe",
       sound: "./assets/lesphrases/sound/variable_03/Girafe.mp3",
@@ -260,8 +260,8 @@ class {
   /**
    *
    * @param doMute
-   */  stop() {
-    a.Sound.stop();
+   */  stop(s) {
+    a.Sound.muted = !!s;
   }
   /**
    *

@@ -1,6 +1,6 @@
-import { r as e, d as i, h as t } from "./p-f68e5270.js";
+import { r as e, d as t, h as i } from "./p-f68e5270.js";
 
-import { a } from "./p-42aaab2d.js";
+import { a } from "./p-e05309b2.js";
 
 /**
  *
@@ -9,60 +9,61 @@ import { a } from "./p-42aaab2d.js";
    *
    * @param imagePath
    */
-  constructor(e, i, t, a, s, n, r) {
-    this.sequenceId = e, this.imagePath = i, this.show = t, this.timePerFrame = a, this.breakpoint = s, 
+  constructor(e, t, i, a, s, n, r) {
+    this.sequenceId = e, this.imagePath = t, this.show = i, this.timePerFrame = a, this.breakpoint = s, 
     this.soundeffect = n, this.frameSequenceIndex = r;
   }
 }
 
 const n = class {
-  constructor(t) {
-    e(this, t), this.breakpointReached = i(this, "breakpointReached", 7), this.animationFinished = i(this, "animationFinished", 7), 
-    this.ready = i(this, "ready", 7), this.ignoreSoundEffect = !1, 
+  constructor(i) {
+    e(this, i), this.breakpointReached = t(this, "breakpointReached", 7), this.animationFinished = t(this, "animationFinished", 7), 
+    this.ready = t(this, "ready", 7), this.ignoreSoundEffect = !1, 
     /**
      *
      * @private
      */
     this.pngframes = [], this.stopRequested = !1, this.frameNumber = 0, this.playing = !1, 
-    this.exitOnBreakpoint = !1, this.backToThumbnail = !1, this.loop = !1;
+    this.exitOnBreakpoint = !1, this.backToThumbail = !1, this.loop = !1;
   }
   /**
    *
    */  componentWillLoad() {
     let e = this.zone.animation[0].id;
-    this.zone.animation.forEach((i => {
-      for (let t = 0; t < i.totalFrames; t++) this.pngframes.push(new s(i.id + "-" + t, `${i.pathPrefix}${t.toString().padStart(5, "0")}.png`, !1, (i.animationDurationMs ? i.animationDurationMs : this.zone.animationDurationMs) / i.totalFrames, e !== i.id, i.soundEffect, t)), 
-      e = i.id;
+    this.zone.animation.forEach((t => {
+      for (let i = 0; i < t.totalFrames; i++) this.pngframes.push(new s(t.id + "-" + i, `${t.pathPrefix}${i.toString().padStart(5, "0")}.png`, !1, (t.animationDurationMs ? t.animationDurationMs : this.zone.animationDurationMs) / t.totalFrames, e !== t.id, t.soundEffect, i)), 
+      e = t.id;
     })), this.pngframes[0].show = !0, this.imageHeight = this.heightAuto ? "auto" : "100%";
   }
   /**
    *
-   */  componentDidLoad() {
-    Promise.all(this.pngframes.map(((e, i) => new Promise((t => {
-      const a = document.createElement("img");
-      e.ref = a, a.onload = () => {
-        t(!0);
-      }, a.classList.add("png-player-frame"), a.classList.add("" + (e.show ? "png-player-frame-showing" : "empty-class")), 
-      a.classList.add("frame-nb-" + i), a.classList.add("sequence-seffect-" + e.soundeffect), 
-      a.classList.add("sequence-id-" + e.sequenceId), a.style.height = this.heightAuto ? "auto" : this.imageHeight + "px", 
-      a.src = e.imagePath, this.framesContainer.append(a);
-    }))))).then((e => this.ready.emit(null)));
+   */  componentDidRender() {
+    const e = document.createDocumentFragment();
+    Promise.all(this.pngframes.map(((t, i) => new Promise((a => {
+      const s = document.createElement("img");
+      t.ref = s, s.onload = () => {
+        a(!0);
+      }, s.classList.add("png-player-frame"), s.classList.add("" + (t.show ? "png-player-frame-showing" : "empty-class")), 
+      s.classList.add("frame-nb-" + i), s.classList.add("sequence-seffect-" + t.soundeffect), 
+      s.classList.add("sequence-id-" + t.sequenceId), s.style.height = this.heightAuto ? "auto" : this.imageHeight + "px", 
+      s.src = t.imagePath, e.appendChild(s);
+    }))))).then((t => this.framesContainer.append(e))).then((e => this.ready.emit(null)));
   }
   /**
    *
    */  render() {
-    return t("div", {
+    return i("div", {
       class: "png-player-frames-container",
       ref: e => this.framesContainer = e
     });
   }
   /**
    *
-   */  async playSequence(e, i) {
+   */  async playSequence(e, t) {
     // console.log(`execute playSequence : sequenceId=${sequenceId}`);
-    await this.stop(), this.findFirstSequenceFrame(e).classList.forEach((t => {
-      t.startsWith("frame-nb-") && (this.frameNumber = parseInt(t.replace("frame-nb-", "")), 
-      this.exitOnBreakpoint = !0, this.backToThumbnail = i, this.animationExpiryTime = this.calculateExpiryTime(e, !1, !1), 
+    await this.stop(), this.findFirstSequenceFrame(e).classList.forEach((i => {
+      i.startsWith("frame-nb-") && (this.frameNumber = parseInt(i.replace("frame-nb-", "")), 
+      this.exitOnBreakpoint = !0, this.backToThumbail = t, this.animationExpiryTime = this.calculateExpiryTime(e, !1, !1), 
       requestAnimationFrame(this.internalPlay.bind(this)));
     }), this);
   }
@@ -70,14 +71,14 @@ const n = class {
    *
    */  async playAndExitOnBreakpoint(e) {
     // console.log(`execute playAndExitOnBreakpoint : sequenceId=${this.pngframes[this.frameNumber].sequenceId}`);
-    return await this.stop(), this.exitOnBreakpoint = !0, this.backToThumbnail = !1, 
+    return await this.stop(), this.exitOnBreakpoint = !0, this.backToThumbail = !1, 
     this.animationExpiryTime = this.calculateExpiryTime(void 0, !0, !1), this.internalPlay(e);
   }
   /**
    *
    */  async playAndLoop(e) {
     // console.log(`execute playAndLoop : sequenceId=${this.pngframes[this.frameNumber].sequenceId}`);
-    return await this.stop(), this.loop = !0, this.exitOnBreakpoint = !1, this.backToThumbnail = !1, 
+    return await this.stop(), this.loop = !0, this.exitOnBreakpoint = !1, this.backToThumbail = !1, 
     this.animationExpiryTime = this.calculateExpiryTime(void 0, !1, !0), this.internalPlay(e);
   }
   /**
@@ -85,7 +86,7 @@ const n = class {
    */  async play(e) {
     // console.log(`execute play : sequenceId=${this.pngframes[this.frameNumber].sequenceId}`);
     this.animationExpiryTime = this.calculateExpiryTime(void 0, !1, !1), this.exitOnBreakpoint = !1, 
-    this.backToThumbnail = !1, this.internalPlay(e);
+    this.backToThumbail = !1, this.internalPlay(e);
   }
   /**
    *
@@ -94,21 +95,28 @@ const n = class {
    */  internalPlay(e) {
     // const now = new Date().getTime();
     if (this.stopRequested || e > this.animationExpiryTime) return;
-    const i = this.pngframes[this.frameNumber];
+    const t = this.pngframes[this.frameNumber];
     if (this.timeWhenLastUpdate || (this.timeWhenLastUpdate = e), this.timeFromLastUpdate = e - this.timeWhenLastUpdate, 
-    this.timeFromLastUpdate > i.timePerFrame) if (
+    this.timeFromLastUpdate > t.timePerFrame) if (
     // console.log(`refreshAnim=${this.pngframes[this.frameNumber].sequenceId},at=${now},startTime=${startTime}`)
     this.showFrame(this.frameNumber), this.ignoreSoundEffect || this.playSoundEffect(), 
     // console.log(`show frame ${currentFrame.frameSequenceIndex} ${currentFrame.imagePath.substring(currentFrame.imagePath.lastIndexOf('/') +1)}`);
     this.timeWhenLastUpdate = e, this.frameNumber + 1 < this.pngframes.length) {
-      if (this.frameNumber = this.frameNumber + 1, this.pngframes[this.frameNumber].breakpoint && this.exitOnBreakpoint) 
+      if (this.frameNumber = this.frameNumber + 1, this.pngframes[this.frameNumber].breakpoint && this.exitOnBreakpoint) return this.breakpointReached.emit(this.pngframes[this.frameNumber].sequenceId + "-" + e), 
+      void 
       // console.log(`breakpoint reached : sequenceId=${this.pngframes[this.frameNumber].sequenceId},startTime=${startTime}`);
-      return this.breakpointReached.emit(this.pngframes[this.frameNumber].sequenceId + "-" + e), 
-      void this.doBackToThumbnail();
+      this.doBackToThumbnail();
     } else if (this.frameNumber = 0, !this.loop) 
     // console.log(`sequence finished : sequenceId=${this.pngframes[this.frameNumber].sequenceId}`);
     return this.animationFinished.emit(null), void this.doBackToThumbnail();
     this.animationId = requestAnimationFrame(this.internalPlay.bind(this));
+  }
+  /**
+   *
+   */  doBackToThumbnail() {
+    setTimeout((() => {
+      this.backToThumbail && (this.frameNumber = 0, this.showFrame(this.frameNumber));
+    }), 1e3);
   }
   /**
    *
@@ -124,11 +132,6 @@ const n = class {
    *
    */  async isPlaying() {
     return this.playing;
-  }
-  /**
-   *
-   */  doBackToThumbnail() {
-    this.backToThumbnail && (this.frameNumber = 0, this.showFrame(this.frameNumber));
   }
   /**
    *
@@ -156,12 +159,12 @@ const n = class {
    * @param sequenceId
    * @param untilNextBreakpoint
    * @param loop
-   */  calculateExpiryTime(e, i, t) {
+   */  calculateExpiryTime(e, t, i) {
     let a = 0;
-    if (e) a = this.zone.animation.find((i => i.id === e)).animationDurationMs, a = a || this.zone.animationDurationMs; else if (i) for (let e = this.frameNumber; e < this.pngframes.length; e++) {
-      let i;
-      if (a += this.pngframes[e].timePerFrame, void 0 !== (i = this.pngframes[e + 1]) && i.breakpoint) break;
-    } else if (t) a = this.pngframes.reduce(((e, i) => e + i.timePerFrame), 0), a *= 3; else for (let e = this.frameNumber; e < this.pngframes.length; e++) a += this.pngframes[e].timePerFrame;
+    if (e) a = this.zone.animation.find((t => t.id === e)).animationDurationMs, a = a || this.zone.animationDurationMs; else if (t) for (let e = this.frameNumber; e < this.pngframes.length; e++) {
+      let t;
+      if (a += this.pngframes[e].timePerFrame, void 0 !== (t = this.pngframes[e + 1]) && t.breakpoint) break;
+    } else if (i) a = this.pngframes.reduce(((e, t) => e + t.timePerFrame), 0), a *= 3; else for (let e = this.frameNumber; e < this.pngframes.length; e++) a += this.pngframes[e].timePerFrame;
     // // console.log(`animation will play during ${expiryTime} ms from ${new Date().toLocaleString()}: sequenceId=${this.pngframes[this.frameNumber].sequenceId}`);
         // // console.log(`animation will expire at ${new Date(expiryTime).toLocaleString()}: sequenceId=${this.pngframes[this.frameNumber].sequenceId}`);
     return a = (new Date).getTime() + a + 1, a;

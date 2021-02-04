@@ -1,6 +1,6 @@
 import { r as t, h as e } from "./p-f68e5270.js";
 
-import { a as i } from "./p-42aaab2d.js";
+import { a as i } from "./p-e05309b2.js";
 
 const o = class {
   constructor(e) {
@@ -74,9 +74,9 @@ const o = class {
    */  randomize(t) {
     if (this.stopRequested) return this.stopRequested = !1, void (this.animationId = void 0);
     this.timeWhenLastUpdate || (this.timeWhenLastUpdate = t), this.timeFromLastUpdate = t - this.timeWhenLastUpdate, 
-    this.timeFromLastUpdate > 40 && (this.timeWhenLastUpdate = t, this.itemIndex++, 
-    this.itemIndex >= this.itemsLength() && (this.itemIndex = 0), this.showItem(!0, this.itemIndex)), 
-    this.animationId = requestAnimationFrame(this.randomize.bind(this));
+    this.timeFromLastUpdate > 100 + Math.floor(50 * Math.random()) + 1 && (this.timeWhenLastUpdate = t, 
+    this.itemIndex++, this.itemIndex >= this.itemsLength() && (this.itemIndex = 0), 
+    this.showItem(!0, this.itemIndex)), this.animationId = requestAnimationFrame(this.randomize.bind(this));
   }
   /**
    *
@@ -99,6 +99,6 @@ const o = class {
   }
 };
 
-o.style = ".toctoc-randomizer-container{width:100%;height:100%;position:relative}.toctoc-randomizer-text{color:rgba(0, 0, 0, .8);font-family:'Museo 300';font-size:25px;font-weight:bold;position:absolute;opacity:0;top:50%;left:50%;transform:translate(-50%, -50%);white-space:nowrap}.toctoc-randomizer-image{position:absolute;opacity:0;top:50%;left:50%;transform:translate(-50%, -50%);width:60%;height:auto}";
+o.style = ".toctoc-randomizer-container{width:100%;height:100%;position:relative}.toctoc-randomizer-text{color:rgba(0, 0, 0, .8);font-family:'Arial Rounded Bold';font-size:25px;font-weight:bold;position:absolute;opacity:0;top:50%;left:50%;transform:translate(-50%, -50%);white-space:nowrap}.toctoc-randomizer-image{position:absolute;opacity:0;top:50%;left:50%;transform:translate(-50%, -50%);width:60%;height:auto}";
 
 export { o as toctoc_randomizer_component }

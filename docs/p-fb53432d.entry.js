@@ -2,7 +2,7 @@ import { r as s, h as e, c as a } from "./p-f68e5270.js";
 
 import { b as t, a as o } from "./p-ab28ff84.js";
 
-import { a as i } from "./p-42aaab2d.js";
+import { a as i } from "./p-e05309b2.js";
 
 import { s as n } from "./p-ed3d6334.js";
 
@@ -14,10 +14,10 @@ const r = {
     height: 224
   },
   listenBtn: {
-    x: 1695,
-    y: 588,
-    width: 224,
-    height: 224
+    x: 1665,
+    y: 527,
+    width: 323,
+    height: 323
   },
   mascot: {
     x: 2602,
@@ -58,7 +58,7 @@ const r = {
       totalFrames: 25,
       soundEffect: "bras_machine"
     } ],
-    animationDurationMs: 1e3
+    animationDurationMs: 800
   },
   zone1: {
     x: 714,
@@ -79,22 +79,22 @@ const r = {
     height: 714
   },
   zone1Btn: {
-    x: 1038,
-    y: 1713,
-    width: 100,
-    height: 100
+    x: 989,
+    y: 1660,
+    width: 202,
+    height: 202
   },
   zone2Btn: {
-    x: 1780,
-    y: 1715,
-    width: 100,
-    height: 100
+    x: 1728,
+    y: 1660,
+    width: 202,
+    height: 202
   },
   zone3Btn: {
-    x: 2518,
-    y: 1715,
-    width: 100,
-    height: 100
+    x: 2467,
+    y: 1660,
+    width: 202,
+    height: 202
   }
 }, d = {
   audioLibrary1: [ "./assets/lesphrases/sound/combination/F_rires2.mp3", "./assets/lesphrases/sound/combination/F_rires7.mp3", "./assets/lesphrases/sound/combination/F_rires8.mp3", "./assets/lesphrases/sound/combination/F_rires9.mp3", "./assets/lesphrases/sound/combination/F_rires10.mp3", "./assets/lesphrases/sound/combination/F_rires11.mp3", "./assets/lesphrases/sound/combination/F_rires13.mp3", "./assets/lesphrases/sound/combination/F_rires15.mp3" ],
@@ -110,7 +110,7 @@ const r = {
     text: "Avec ma cousine",
     audio: "./assets/lesphrases/sound/variable_01/AvecCousine.mp3"
   }, {
-    text: "Avec mon frére",
+    text: "Avec mon frère",
     audio: "./assets/lesphrases/sound/variable_01/AvecFrere.mp3"
   }, {
     text: "Avec ma maman",
@@ -128,13 +128,13 @@ const r = {
     text: "Avec ma soeur",
     audio: "./assets/lesphrases/sound/variable_01/AvecSoeur.mp3"
   }, {
-    text: "Dans ma cabanne",
+    text: "Dans ma cabane",
     audio: "./assets/lesphrases/sound/variable_01/Cabanne.mp3"
   }, {
     text: "Chez moi",
     audio: "./assets/lesphrases/sound/variable_01/ChezMoi.mp3"
   }, {
-    text: "Dans la Cour",
+    text: "Dans la cour",
     audio: "./assets/lesphrases/sound/variable_01/Cours.mp3"
   }, {
     text: "Dans mon bain",
@@ -149,7 +149,7 @@ const r = {
     text: "Derrière ma maison",
     audio: "./assets/lesphrases/sound/variable_01/DerriereMaison.mp3"
   }, {
-    text: "A l'école",
+    text: "À l'école",
     audio: "./assets/lesphrases/sound/variable_01/Ecole.mp3"
   }, {
     text: "Sous un arbre",
@@ -172,7 +172,7 @@ const r = {
     text: "j'arrose",
     audio: "./assets/lesphrases/sound/variable_02/Arrose.mp3"
   }, {
-    text: "je cache",
+    text: "j'ai caché",
     audio: "./assets/lesphrases/sound/variable_02/Cacher.mp3"
   }, {
     text: "je casse",
@@ -190,7 +190,7 @@ const r = {
     text: "je croque",
     audio: "./assets/lesphrases/sound/variable_02/Croque.mp3"
   }, {
-    text: "je cuis",
+    text: "je fais cuire",
     audio: "./assets/lesphrases/sound/variable_02/Cuire.mp3"
   }, {
     text: "je découpe",
@@ -202,7 +202,7 @@ const r = {
     text: "j'embrasse",
     audio: "./assets/lesphrases/sound/variable_02/Embrasser.mp3"
   }, {
-    text: "j'endore",
+    text: "j'endors",
     audio: "./assets/lesphrases/sound/variable_02/Endormir.mp3"
   }, {
     text: "j'épluche",
@@ -226,10 +226,10 @@ const r = {
     text: "je mords",
     audio: "./assets/lesphrases/sound/variable_02/Mordre.mp3"
   }, {
-    text: "j'ai oublié",
+    text: "j'oublie",
     audio: "./assets/lesphrases/sound/variable_02/Oublier.mp3"
   }, {
-    text: "je perds",
+    text: "j'ai perdu",
     audio: "./assets/lesphrases/sound/variable_02/Perdre.mp3"
   }, {
     text: "je pince",
@@ -359,9 +359,7 @@ const r = {
       src: a("./assets/lesphrases/TocToc_Phrase.png")
     }), e("div", {
       class: "les-phrases-toctoc-back-btn",
-      onClick: () => {
-        i.stop(), this.history.goBack();
-      },
+      onClick: this.history.goBack,
       ref: s => this.backBtn = s
     }), e("div", {
       class: "les-phrases-toctoc-listen-btn",
@@ -400,30 +398,43 @@ const r = {
       ref: s => this.zone3 = s,
       voicedImage: this.zoning.zone3dateset
     })), e("div", {
-      class: "les-phrases-toctoc-zone-btn yellow",
+      class: "les-phrases-toctoc-zone-btn",
       ref: s => this.zone1Btn = s
-    }), e("div", {
-      class: "les-phrases-toctoc-zone-btn orange",
+    }, e("div", {
+      class: "yellow"
+    })), e("div", {
+      class: "les-phrases-toctoc-zone-btn",
       ref: s => this.zone2Btn = s
-    }), e("div", {
-      class: "les-phrases-toctoc-zone-btn beige",
+    }, e("div", {
+      class: "orange"
+    })), e("div", {
+      class: "les-phrases-toctoc-zone-btn",
       ref: s => this.zone3Btn = s
-    }));
+    }, e("div", {
+      class: "beige"
+    })));
   }
   /**
    *
    * @param _evt
    */  onWindowResize(s) {
-    this.drawBackBtn(), this.drawListenBtn(), this.drawMascot(), this.drawCrank(), this.drawZone1(), 
-    this.drawZone2(), this.drawZone3();
+    this.drawElems();
   }
   /**
    *
-   */  componentDidRender() {
-    setTimeout((() => {
-      this.drawBackBtn(), this.drawListenBtn(), this.drawMascot(), this.drawCrank(), this.drawZone1(), 
-      this.drawZone2(), this.drawZone3(), this.attachListener();
-    }), 100);
+   */  componentDidLoad() {
+    this.drawElems(), this.attachListener();
+  }
+  /**
+   *
+   */  drawElems() {
+    this.decorReady() ? (this.drawBackBtn(), this.drawListenBtn(), this.drawMascot(), 
+    this.drawCrank(), this.drawZone1(), this.drawZone2(), this.drawZone3()) : setTimeout((() => this.drawElems()), 100);
+  }
+  /**
+   *
+   */  decorReady() {
+    return this.decorRef.getBoundingClientRect().width > 0;
   }
   /**
    *
@@ -476,7 +487,7 @@ const r = {
     this.crankContainer.onclick = this.onCranckTouched.bind(this), this.listenBtn.onclick = async () => {
       this.animationInProgress || this.audioInProgress || (this.audioInProgress = !0, 
       await this.zone1.playAudio(), await this.zone2.playAudio(), await this.zone3.playAudio(), 
-      await n(2e3), await this.endSounds(), this.playMascotEffect(), this.audioInProgress = !1);
+      await n(1e3), await this.endSounds(), this.playMascotEffect(), this.audioInProgress = !1);
     }, this.zone1Btn.onclick = async () => {
       if (!this.animationInProgress && !this.audioInProgress) {
         this.animationInProgress = !0;
@@ -484,7 +495,7 @@ const r = {
           offset: 1e3
         });
         this.zone1.start(), await n(3e3), s.stop(), this.zone1.stop(), await this.zone1.playAudio(), 
-        await this.zone2.playAudio(), await this.zone3.playAudio(), await n(2e3), await this.endSounds(), 
+        await this.zone2.playAudio(), await this.zone3.playAudio(), await n(1e3), await this.endSounds(), 
         this.playMascotEffect(), this.animationInProgress = !1;
       }
     }, this.zone2Btn.onclick = async () => {
@@ -494,7 +505,7 @@ const r = {
           offset: 1e3
         });
         this.zone2.start(), await n(3e3), s.stop(), this.zone2.stop(), await this.zone1.playAudio(), 
-        await this.zone2.playAudio(), await this.zone3.playAudio(), await n(2e3), await this.endSounds(), 
+        await this.zone2.playAudio(), await this.zone3.playAudio(), await n(1e3), await this.endSounds(), 
         this.playMascotEffect(), this.animationInProgress = !1;
       }
     }, this.zone3Btn.onclick = async () => {
@@ -504,7 +515,7 @@ const r = {
           offset: 1e3
         });
         this.zone3.start(), await n(2e3), s.stop(), this.zone3.stop(), await this.zone1.playAudio(), 
-        await this.zone2.playAudio(), await this.zone3.playAudio(), await n(2e3), await this.endSounds(), 
+        await this.zone2.playAudio(), await this.zone3.playAudio(), await n(1e3), await this.endSounds(), 
         this.playMascotEffect(), this.animationInProgress = !1;
       }
     };
@@ -522,19 +533,18 @@ const r = {
   /**
    *
    */  async endSounds() {
-    await i.play(this.zoning.audioLibrary1[Math.floor(Math.random() * this.zoning.audioLibrary1.length)]), 
-    await n(1e3), await i.play(this.zoning.audioLibrary2[Math.floor(Math.random() * this.zoning.audioLibrary2.length)]);
+    await i.play(this.zoning.audioLibrary1[Math.floor(Math.random() * this.zoning.audioLibrary1.length)]);
   }
   /**
    *
    */  playMascotEffect() {
-    this.mascot.playSequence(this.mascotEffect[Math.floor(Math.random() * this.mascotEffect.length)], !0);
+    this.mascot.playSequence("mascotsurprise", !0);
   }
   static get assetsDirs() {
     return [ "assets" ];
   }
 };
 
-p.style = ":host{display:block}.les-phrases-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-phrases-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-phrases-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-phrases-toctoc-listen-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/lesphrases/Picto_Ecouter.svg')}.les-phrases-toctoc-back-btn:hover,.les-phrases-toctoc-listen-btn:hover,.les-phrases-toctoc-zone-btn:hover{transform:scale(1.2)}.les-phrases-toctoc-mascot{position:absolute;border-radius:50%}.les-phrases-toctoc-crank{position:absolute;border-radius:50%}.les-phrases-toctoc-zone{position:absolute}.les-phrases-toctoc-zone-btn{position:absolute;border-radius:50%}.yellow{background-color:rgb(249, 215, 77)}.orange{background-color:rgb(237, 125, 63)}.beige{background-color:rgb(255, 254, 240)}";
+p.style = ":host{display:block}.les-phrases-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-phrases-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-phrases-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-phrases-toctoc-listen-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/lesphrases/Picto_Ecouter.svg')}.les-phrases-toctoc-back-btn:hover,.les-phrases-toctoc-listen-btn:hover,.les-phrases-toctoc-zone-btn:hover{transform:scale(1.2)}.les-phrases-toctoc-mascot{position:absolute;border-radius:50%}.les-phrases-toctoc-crank{position:absolute;border-radius:50%}.les-phrases-toctoc-zone{position:absolute}.les-phrases-toctoc-zone-btn{position:absolute;border-radius:50%;background-color:rgb(74, 161, 174)}.les-phrases-toctoc-zone-btn div{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);border-radius:50%;height:50%;width:50%}.yellow{background-color:rgb(249, 215, 77)}.orange{background-color:rgb(237, 125, 63)}.beige{background-color:rgb(255, 254, 240)}";
 
 export { p as les_phrases_toctoc }

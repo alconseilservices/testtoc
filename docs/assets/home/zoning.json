@@ -6,12 +6,24 @@
     "height": 204,
     "image": "Picto_Play.svg"
   },
+  "lesMotsCard": {
+    "x": 888,
+    "y": 1238,
+    "width": 904,
+    "height": 540
+  },
   "playBtn2": {
     "x": 2400,
     "y": 1691,
     "width": 204,
     "height": 204,
     "image": "Picto_Play.svg"
+  },
+  "lesPhrasesCard": {
+    "x": 2055,
+    "y": 1238,
+    "width": 904,
+    "height": 540
   },
   "mascot": {
     "x": 1608,

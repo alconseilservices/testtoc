@@ -2,13 +2,13 @@ import { r as t, h as e, c as i } from "./p-f68e5270.js";
 
 import { b as s, a as n } from "./p-ab28ff84.js";
 
-import { Z as o, a } from "./p-42aaab2d.js";
+import { Z as o, a } from "./p-e05309b2.js";
 
 import { f as r, s as c } from "./p-ed3d6334.js";
 
 /**
  *
- */ class h {
+ */ class d {
   /**
    *
    * @param elem
@@ -41,16 +41,20 @@ import { f as r, s as c } from "./p-ed3d6334.js";
   }
 }
 
-const d = class {
+const h = class {
   constructor(e) {
     t(this, e), this.zoning = o, this.cardInViewIndex = -1, this.animationInProgress = !1, 
     this.initDone = !1, this.lastCard = !1, this.expectedReadyEventCount = 4, this.readyEventCount = 1, 
     this.mascotEffect = [ "mascotsurprise", "mascotrire" ];
   }
-  componentWillLoad() {
+  /**
+   *
+   */  componentWillLoad() {
     a.mute(!0), this.zoning.cardsList.imageLibrary.forEach((t => t.sound = a.register("lm", t.sound)));
   }
-  render() {
+  /**
+   *
+   */  render() {
     return e("div", {
       class: "les-mots-toctoc-container noscroll",
       ref: t => this.menuContainerRef = t
@@ -62,12 +66,13 @@ const d = class {
     }, e("div", null), e("div", null), e("div", null), e("div", null))), e("img", {
       class: "les-mots-toctoc-decor",
       ref: t => this.decorRef = t,
+      onLoad: () => {
+        console.log("decor loaded", this.decorRef.getBoundingClientRect());
+      },
       src: i("./assets/lesmots/TocToc_Mot_Socle.png")
     }), e("div", {
       class: "les-mots-toctoc-back-btn",
-      onClick: () => {
-        a.stop(), this.history.goBack();
-      },
+      onClick: this.history.goBack,
       ref: t => this.backBtn = t
     }), e("div", {
       class: "les-mots-toctoc-mascot",
@@ -123,11 +128,20 @@ const d = class {
   }
   /**
    *
-   */  componentDidRender() {
-    setTimeout((() => {
-      this.drawConveyorBelt(), this.drawHammer(), this.createInactivityDectector(), this.drawStrainer(), 
-      this.drawCardList(), this.drawWordPanel(), this.drawMascot(), this.drawBackBtn();
-    }), 50);
+   */  componentDidLoad() {
+    this.drawElems();
+  }
+  /**
+   *
+   */  drawElems() {
+    this.decorReady() ? (this.drawConveyorBelt(), this.drawHammer(), this.createInactivityDectector(), 
+    this.drawStrainer(), this.drawCardList(), this.drawWordPanel(), this.drawMascot(), 
+    this.drawBackBtn()) : setTimeout((() => this.drawElems()), 100);
+  }
+  /**
+   *
+   */  decorReady() {
+    return this.decorRef.getBoundingClientRect().width > 0;
   }
   /**
    *
@@ -141,9 +155,9 @@ const d = class {
   /**
    *
    */  createInactivityDectector() {
-    this.inactivityDetector = new h(this.hammerBtn, 1e4, (() => {
+    this.inactivityDetector || (this.inactivityDetector = new d(this.hammerBtn, 1e4, (() => {
       this.hammerBtn.classList.add("bounce-effect"), this.mascot.playSequence("mascotdoigt", !0);
-    }));
+    })));
   }
   /**
    *
@@ -184,12 +198,12 @@ const d = class {
     this.cardInViewIndex++;
     let i = r(".card-index-" + (this.cardInViewIndex - 1), this.cardsList), s = r(".card-index-" + this.cardInViewIndex, this.cardsList), n = r(".card-index-" + (this.cardInViewIndex + 1), this.cardsList), o = r(".card-index-" + (this.cardInViewIndex + 2), this.cardsList);
     this.initDone || (o = n, n = s, s = null, this.cardInViewIndex--, this.initDone = !0);
-    const h = a.playAndGetRef("conveyorBelt", {});
+    const d = a.playAndGetRef("conveyorBelt", {});
     requestAnimationFrame(this.conveyorBelt.playAndLoop.bind(this.conveyorBelt)), i && i.classList.add("hide"), 
     s && this.attachCardMotionClassAndMove(s, this.initDone ? "2s" : "3s", t.width - t.height + "px"), 
     this.initDone || await c(1e3), n && this.attachCardMotionClassAndMove(n, "2s", e.width - t.height + "px"), 
-    await c(100), o && this.attachCardMotionClassAndMove(o, "2s", "0px"), this.initDone, 
-    await c(2e3), h.stop(), this.conveyorBelt.stop(), this.lastCard = !n && !o, this.selectedCard = s;
+    await c(1e3), o && this.attachCardMotionClassAndMove(o, "2s", "0px"), this.initDone, 
+    await c(2e3), d.stop(), this.conveyorBelt.stop(), this.lastCard = !n && !o, this.selectedCard = s;
   }
   /**
    *
@@ -258,6 +272,6 @@ const d = class {
   }
 };
 
-d.style = ".les-mots-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-mots-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-mots-toctoc-conveyor-belt{position:absolute}.les-mots-toctoc-mascot{position:absolute;border-radius:50%}.les-mots-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-mots-toctoc-back-btn:hover{transform:scale(1.2)}.les-mots-toctoc-word-panel{color:white;font-family:'Museo 300';position:absolute;text-align:center;transition:font-size .3s linear}.les-mots-toctoc-hammer{position:absolute;cursor:pointer}.les-mots-toctoc-hammer-btn{position:absolute;background-color:rgb(221, 42, 0);border-radius:50%}.les-mots-toctoc-strainer{position:absolute}.les-mots-toctoc-cards-list::-webkit-scrollbar{display:none}.les-mots-toctoc-cards-list{position:absolute;overflow:hidden}.les-mots-toctoc-card{position:absolute;width:auto;height:100%;-webkit-transition:all 1s linear;-moz-transition:all 1s linear;-o-transition:all 1s linear;-ms-transition:all 1s linear;transition:all 1s linear}.les-mots-toctoc-card-motion-1s{-webkit-transition:left 1s linear;-moz-transition:left 1s linear;-o-transition:left 1s linear;-ms-transition:left 1s linear;transition:left 1s linear}.les-mots-toctoc-card-motion-1s5{-webkit-transition:left 1.5s linear;-moz-transition:left 1.5s linear;-o-transition:left 1.5s linear;-ms-transition:left 1.5s linear;transition:left 1.5s linear}.les-mots-toctoc-card-motion-2s{-webkit-transition:left 2s linear;-moz-transition:left 2s linear;-o-transition:left 2s linear;-ms-transition:left 2s linear;transition:left 2s linear}.les-mots-toctoc-card-motion-3s{-webkit-transition:left 3s linear;-moz-transition:left 3s linear;-o-transition:left 3s linear;-ms-transition:left 3s linear;transition:left 3s linear}";
+h.style = ".les-mots-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-mots-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-mots-toctoc-conveyor-belt{position:absolute}.les-mots-toctoc-mascot{position:absolute;border-radius:50%}.les-mots-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-mots-toctoc-back-btn:hover{transform:scale(1.2)}.les-mots-toctoc-word-panel{color:white;font-family:'Arial Rounded Bold';position:absolute;text-align:center;transition:font-size .3s linear}.les-mots-toctoc-hammer{position:absolute;cursor:pointer}.les-mots-toctoc-hammer-btn{position:absolute;background-color:rgb(221, 42, 0);border-radius:50%}.les-mots-toctoc-strainer{position:absolute}.les-mots-toctoc-cards-list::-webkit-scrollbar{display:none}.les-mots-toctoc-cards-list{position:absolute;overflow:hidden}.les-mots-toctoc-card{position:absolute;width:auto;height:100%;-webkit-transition:all 1s linear;-moz-transition:all 1s linear;-o-transition:all 1s linear;-ms-transition:all 1s linear;transition:all 1s linear}.les-mots-toctoc-card-motion-1s{-webkit-transition:left 1s linear;-moz-transition:left 1s linear;-o-transition:left 1s linear;-ms-transition:left 1s linear;transition:left 1s linear}.les-mots-toctoc-card-motion-1s5{-webkit-transition:left 1.5s linear;-moz-transition:left 1.5s linear;-o-transition:left 1.5s linear;-ms-transition:left 1.5s linear;transition:left 1.5s linear}.les-mots-toctoc-card-motion-2s{-webkit-transition:left 2s linear;-moz-transition:left 2s linear;-o-transition:left 2s linear;-ms-transition:left 2s linear;transition:left 2s linear}.les-mots-toctoc-card-motion-3s{-webkit-transition:left 3s linear;-moz-transition:left 3s linear;-o-transition:left 3s linear;-ms-transition:left 3s linear;transition:left 3s linear}";
 
-export { d as les_mots_toctoc }
+export { h as les_mots_toctoc }
