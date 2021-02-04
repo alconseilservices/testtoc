@@ -7,7 +7,7 @@ import { g as t } from "./p-2d4e664e.js";
  */ (() => {
   const o = import.meta.url, t = {};
   return "" !== o && (t.resourcesUrl = new URL(".", o).href), e(t);
-})().then((e => (t(), o([ [ "p-fb53432d", [ [ 0, "les-phrases-toctoc", {
+})().then((e => (t(), o([ [ "p-347ccf2b", [ [ 0, "les-phrases-toctoc", {
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-6384d196", [ [ 0, "les-mots-toctoc", {
   history: [ 16 ]
