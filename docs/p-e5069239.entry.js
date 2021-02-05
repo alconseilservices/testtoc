@@ -2,7 +2,7 @@ import { r as t, h as e, c as i, H as s } from "./p-f983d8f8.js";
 
 import { b as n, a as o } from "./p-dafeb48e.js";
 
-import { Z as a, a as r } from "./p-53d0f9d1.js";
+import { Z as r, a } from "./p-53d0f9d1.js";
 
 import { f as c, s as h } from "./p-ed3d6334.js";
 
@@ -43,7 +43,7 @@ import { f as c, s as h } from "./p-ed3d6334.js";
 
 const l = class {
   constructor(e) {
-    t(this, e), this.zoning = a, this.inactivityCount = 0, this.cardInViewIndex = -1, 
+    t(this, e), this.zoning = r, this.inactivityCount = 0, this.cardInViewIndex = -1, 
     this.animationInProgress = !1, this.initDone = !1, this.lastCard = !1, this.expectedReadyEventCount = 4, 
     this.readyEventCount = 1, this.mascotEffect = [ "mascotsurprise", "mascotrire" ], 
     this.lastMascotEffect = "mascotsurprise";
@@ -51,7 +51,7 @@ const l = class {
   /**
    *
    */  componentWillLoad() {
-    r.mute(!0), this.zoning.cardsList.imageLibrary.forEach((t => t.sound = r.register("lm", t.sound)));
+    a.mute(!0), this.zoning.cardsList.imageLibrary.forEach((t => t.sound = a.register("lm", t.sound)));
   }
   /**
    *
@@ -163,7 +163,7 @@ const l = class {
    * @param _evt
    */  handleReadyEvent() {
     this.readyEventCount++ >= this.expectedReadyEventCount && setTimeout((async () => {
-      await this.moveOnConveyor(), this.loaderRef.style.display = "none", r.mute(!1), 
+      await this.moveOnConveyor(), this.loaderRef.style.display = "none", a.mute(!1), 
       this.attachListeners(), this.inactivityDetector.activate(), setTimeout((() => this.mascot.playSequence("mascotcoucou", !0)), 2e3);
     }), 300);
   }
@@ -219,14 +219,14 @@ const l = class {
     this.cardInViewIndex++;
     let i = c(".card-index-" + (this.cardInViewIndex - 1), this.cardsList), s = c(".card-index-" + this.cardInViewIndex, this.cardsList), n = c(".card-index-" + (this.cardInViewIndex + 1), this.cardsList), o = c(".card-index-" + (this.cardInViewIndex + 2), this.cardsList);
     this.initDone || (o = n, n = s, s = null, this.cardInViewIndex--, this.initDone = !0);
-    const a = r.playAndGetRef("conveyorBelt", {
+    const r = a.playAndGetRef("conveyorBelt", {
       loop: -1
     });
     requestAnimationFrame(this.conveyorBelt.playAndLoop.bind(this.conveyorBelt)), i && i.classList.add("hide"), 
     s && this.attachCardMotionClassAndMove(s, this.initDone ? "2s" : "3s", t.width - t.height + "px"), 
     this.initDone || await h(1e3), n && this.attachCardMotionClassAndMove(n, "2s", e.width - t.height + "px"), 
     await h(1e3), o && this.attachCardMotionClassAndMove(o, "2s", "0px"), this.initDone, 
-    await h(2e3), a.stop(), this.conveyorBelt.stop(), this.lastCard = !n && !o, this.selectedCard = s;
+    await h(2e3), r.stop(), this.conveyorBelt.stop(), this.lastCard = !n && !o, this.selectedCard = s;
   }
   /**
    *
@@ -286,7 +286,7 @@ const l = class {
     // this.strainer.removeEventListener('animationFinished', this.onStrainerAnimationFinished.bind(this));
     this.wordPanel.innerHTML = this.selectedCard.dataset.imageName;
     const t = this.zoning.cardsList.imageLibrary.find((t => t.name === this.selectedCard.dataset.imageName));
-    r.play(t.sound), this.setWordFontSize(!0), this.animationInProgress = !1, setTimeout((() => this.playMascotEffect()), 1e3), 
+    a.play(t.sound), this.setWordFontSize(!0), this.animationInProgress = !1, setTimeout((() => this.playMascotEffect()), 1e3), 
     this.activityDetectorTimer = setTimeout((() => this.inactivityDetector.activate()), 2e3);
   }
   /**
@@ -301,6 +301,6 @@ const l = class {
   }
 };
 
-l.style = ".les-mots-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-mots-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-mots-toctoc-conveyor-belt{position:absolute}.les-mots-toctoc-mascot{position:absolute;border-radius:50%}.les-mots-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-mots-toctoc-back-btn:hover{transform:scale(1.2)}.les-mots-toctoc-word-panel{color:rgb(0, 0, 0);font-family:'Arial Rounded Bold';position:absolute;text-align:center;transition:font-size .3s linear}.les-mots-toctoc-hammer{position:absolute;cursor:pointer}.les-mots-toctoc-hammer-btn{position:absolute;background-color:rgb(221, 42, 0);border-radius:50%}.les-mots-toctoc-strainer{position:absolute}.les-mots-toctoc-cards-list::-webkit-scrollbar{display:none}.les-mots-toctoc-cards-list{position:absolute;overflow:hidden}.les-mots-toctoc-card{position:absolute;width:auto;height:100%;-webkit-transition:all 1s linear;-moz-transition:all 1s linear;-o-transition:all 1s linear;-ms-transition:all 1s linear;transition:all 1s linear}.les-mots-toctoc-card-motion-1s{-webkit-transition:left 1s linear;-moz-transition:left 1s linear;-o-transition:left 1s linear;-ms-transition:left 1s linear;transition:left 1s linear}.les-mots-toctoc-card-motion-1s5{-webkit-transition:left 1.5s linear;-moz-transition:left 1.5s linear;-o-transition:left 1.5s linear;-ms-transition:left 1.5s linear;transition:left 1.5s linear}.les-mots-toctoc-card-motion-2s{-webkit-transition:left 2s linear;-moz-transition:left 2s linear;-o-transition:left 2s linear;-ms-transition:left 2s linear;transition:left 2s linear}.les-mots-toctoc-card-motion-3s{-webkit-transition:left 3s linear;-moz-transition:left 3s linear;-o-transition:left 3s linear;-ms-transition:left 3s linear;transition:left 3s linear}.les-mots-toctoc-cartridge{z-index:2;position:fixed}.les-mots-toctoc-scanner{position:absolute;background-color:rgb(134, 206, 215)}";
+l.style = ".les-mots-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-mots-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-mots-toctoc-conveyor-belt{position:absolute}.les-mots-toctoc-mascot{position:absolute;border-radius:50%}.les-mots-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-mots-toctoc-back-btn:hover{transform:scale(1.2)}.les-mots-toctoc-word-panel{color:rgb(0, 0, 0);font-family:'Arial Rounded Bold';position:absolute;text-align:center;transition:font-size .3s linear}.les-mots-toctoc-hammer{position:absolute;cursor:pointer}.les-mots-toctoc-hammer-btn{position:absolute;background-color:rgb(221, 42, 0);border-radius:50%}.les-mots-toctoc-strainer{position:absolute}.les-mots-toctoc-cards-list::-webkit-scrollbar{display:none}.les-mots-toctoc-cards-list{position:absolute;overflow:hidden}.les-mots-toctoc-card{position:absolute;width:auto;height:100%;-webkit-transition:all 1s linear;-moz-transition:all 1s linear;-o-transition:all 1s linear;-ms-transition:all 1s linear;transition:all 1s linear}.les-mots-toctoc-card-motion-1s{-webkit-transition:left 1s linear;-moz-transition:left 1s linear;-o-transition:left 1s linear;-ms-transition:left 1s linear;transition:left 1s linear}.les-mots-toctoc-card-motion-1s5{-webkit-transition:left 1.5s linear;-moz-transition:left 1.5s linear;-o-transition:left 1.5s linear;-ms-transition:left 1.5s linear;transition:left 1.5s linear}.les-mots-toctoc-card-motion-2s{-webkit-transition:left 2s linear;-moz-transition:left 2s linear;-o-transition:left 2s linear;-ms-transition:left 2s linear;transition:left 2s linear}.les-mots-toctoc-card-motion-3s{-webkit-transition:left 3s linear;-moz-transition:left 3s linear;-o-transition:left 3s linear;-ms-transition:left 3s linear;transition:left 3s linear}.les-mots-toctoc-cartridge{z-index:2;position:fixed}.les-mots-toctoc-scanner{position:absolute;background-color:rgb(109, 208, 217);border-top-right-radius:15px}";
 
 export { l as les_mots_toctoc }
