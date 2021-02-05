@@ -7,11 +7,11 @@ import { g as t } from "./p-2d4e664e.js";
  */ (() => {
   const o = import.meta.url, t = {};
   return "" !== o && (t.resourcesUrl = new URL(".", o).href), e(t);
-})().then((e => (t(), o([ [ "p-25cf7d56", [ [ 0, "les-phrases-toctoc", {
+})().then((e => (t(), o([ [ "p-4302ddf7", [ [ 0, "les-phrases-toctoc", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-baae8720", [ [ 0, "app-home", {
+}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-375ebbce", [ [ 0, "app-home", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-8956b189", [ [ 0, "les-mots-toctoc", {
+}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-77e8aa8b", [ [ 0, "les-mots-toctoc", {
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-2ed45f91", [ [ 0, "context-consumer", {
   context: [ 16 ],
@@ -53,7 +53,7 @@ import { g as t } from "./p-2d4e664e.js";
   history: [ 16 ],
   root: [ 1 ],
   url: [ 1 ]
-} ] ] ], [ "p-43dbd159", [ [ 0, "toctoc-randomizer-component", {
+} ] ] ], [ "p-3326a58f", [ [ 0, "toctoc-randomizer-component", {
   voicedText: [ 16 ],
   voicedImage: [ 16 ],
   stop: [ 64 ],
@@ -87,7 +87,7 @@ import { g as t } from "./p-2d4e664e.js";
   scrollTopOffset: [ 2, "scroll-top-offset" ],
   location: [ 32 ],
   history: [ 32 ]
-} ] ] ], [ "p-ddf76702", [ [ 0, "png-player-component", {
+} ] ] ], [ "p-5037e155", [ [ 0, "png-player-component", {
   zone: [ 16 ],
   ignoreSoundEffect: [ 4, "ignore-sound-effect" ],
   heightAuto: [ 4, "height-auto" ],

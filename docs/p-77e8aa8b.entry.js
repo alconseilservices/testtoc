@@ -1,8 +1,8 @@
 import { r as t, h as e, c as i, H as s } from "./p-f983d8f8.js";
 
-import { b as n, a as o } from "./p-ab28ff84.js";
+import { b as n, a as o } from "./p-dafeb48e.js";
 
-import { Z as a, a as r } from "./p-f80eff53.js";
+import { Z as a, a as r } from "./p-53d0f9d1.js";
 
 import { f as c, s as h } from "./p-ed3d6334.js";
 
@@ -151,7 +151,7 @@ const l = class {
    */  drawElems() {
     this.decorReady() ? (this.drawConveyorBelt(), this.drawHammer(), this.createInactivityDectector(), 
     this.drawStrainer(), this.drawCardList(), this.drawWordPanel(), this.drawMascot(), 
-    this.drawBackBtn(), this.drawCartridge(), this.drawScanner()) : setTimeout((() => this.drawElems()), 100);
+    this.drawBackBtn(), this.drawCartridge(), this.drawScanner()) : setTimeout((() => this.drawElems()), 1e3);
   }
   /**
    *

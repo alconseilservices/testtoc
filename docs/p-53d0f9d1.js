@@ -209,8 +209,8 @@ const e = {
   cartridge: {
     x: 500,
     y: 0,
-    width: 710,
-    height: 330
+    width: 500,
+    height: -1
   },
   scanner: {
     x: 0,

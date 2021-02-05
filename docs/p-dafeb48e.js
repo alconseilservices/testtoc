@@ -49,7 +49,7 @@ function zoneWidth(t, e) {
  * @param decor
  * @param zone
  */ function zoneWidthHeightForElem(t, e, i) {
-  t.style.width = zoneWidth(e, i) + "px", t.style.height = zoneHeight(e, i) + "px";
+  t.style.width = i.width >= 0 ? zoneWidth(e, i) + "px" : "auto", t.style.height = i.height >= 0 ? zoneHeight(e, i) + "px" : "auto";
 }
 
 /**

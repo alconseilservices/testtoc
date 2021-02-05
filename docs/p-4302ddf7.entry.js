@@ -1,8 +1,8 @@
 import { r as s, h as e, c as a, H as t } from "./p-f983d8f8.js";
 
-import { b as o, a as i } from "./p-ab28ff84.js";
+import { b as o, a as i } from "./p-dafeb48e.js";
 
-import { a as n } from "./p-f80eff53.js";
+import { a as n } from "./p-53d0f9d1.js";
 
 import { s as r } from "./p-ed3d6334.js";
 
@@ -99,8 +99,8 @@ const c = {
   cartridge: {
     x: 500,
     y: 0,
-    width: 710,
-    height: 330
+    width: 500,
+    height: -1
   }
 }, d = {
   audioLibrary1: [ "./assets/lesphrases/sound/combination/F_rires7.mp3", "./assets/lesphrases/sound/combination/F_rires10.mp3", "./assets/lesphrases/sound/combination/F_rires11.mp3", "./assets/lesphrases/sound/combination/F_rires13.mp3" ],
