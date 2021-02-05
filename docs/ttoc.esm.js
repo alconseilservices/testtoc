@@ -11,7 +11,7 @@ import { g as t } from "./p-2d4e664e.js";
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-375ebbce", [ [ 0, "app-home", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-e5069239", [ [ 0, "les-mots-toctoc", {
+}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-a564d20b", [ [ 0, "les-mots-toctoc", {
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-2ed45f91", [ [ 0, "context-consumer", {
   context: [ 16 ],

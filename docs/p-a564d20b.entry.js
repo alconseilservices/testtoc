@@ -225,8 +225,9 @@ const l = class {
     requestAnimationFrame(this.conveyorBelt.playAndLoop.bind(this.conveyorBelt)), i && i.classList.add("hide"), 
     s && this.attachCardMotionClassAndMove(s, this.initDone ? "2s" : "3s", t.width - t.height + "px"), 
     this.initDone || await h(1e3), n && this.attachCardMotionClassAndMove(n, "2s", e.width - t.height + "px"), 
-    await h(1e3), o && this.attachCardMotionClassAndMove(o, "2s", "0px"), this.initDone, 
-    await h(2e3), r.stop(), this.conveyorBelt.stop(), this.lastCard = !n && !o, this.selectedCard = s;
+    // await sleep(1000);
+    o && this.attachCardMotionClassAndMove(o, "2s", "0px"), this.initDone, await h(2e3), 
+    r.stop(), this.conveyorBelt.stop(), this.lastCard = !n && !o, this.selectedCard = s;
   }
   /**
    *
