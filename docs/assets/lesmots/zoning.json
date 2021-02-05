@@ -241,6 +241,18 @@
     "y": 1675,
     "width": 1330,
     "height": 190
+  },
+  "cartridge": {
+    "x": 500,
+    "y": 0,
+    "width": 710,
+    "height": 330
+  },
+  "scanner": {
+    "x": 0,
+    "y": 1000,
+    "width": 101,
+    "height": 798
   }
 }
 

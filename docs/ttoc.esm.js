@@ -1,4 +1,4 @@
-import { p as e, b as o } from "./p-f68e5270.js";
+import { p as e, b as o } from "./p-f983d8f8.js";
 
 import { g as t } from "./p-2d4e664e.js";
 
@@ -7,21 +7,21 @@ import { g as t } from "./p-2d4e664e.js";
  */ (() => {
   const o = import.meta.url, t = {};
   return "" !== o && (t.resourcesUrl = new URL(".", o).href), e(t);
-})().then((e => (t(), o([ [ "p-347ccf2b", [ [ 0, "les-phrases-toctoc", {
+})().then((e => (t(), o([ [ "p-25cf7d56", [ [ 0, "les-phrases-toctoc", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-6384d196", [ [ 0, "les-mots-toctoc", {
+}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-baae8720", [ [ 0, "app-home", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-2133432b", [ [ 0, "app-home", {
+}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-8956b189", [ [ 0, "les-mots-toctoc", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-3bee3548", [ [ 0, "context-consumer", {
+}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-2ed45f91", [ [ 0, "context-consumer", {
   context: [ 16 ],
   renderer: [ 16 ],
   subscribe: [ 16 ],
   unsubscribe: [ 32 ]
-} ] ] ], [ "p-9250de13", [ [ 0, "stencil-async-content", {
+} ] ] ], [ "p-0e968ead", [ [ 0, "stencil-async-content", {
   documentLocation: [ 1, "document-location" ],
   content: [ 32 ]
-} ] ] ], [ "p-621b9e08", [ [ 4, "stencil-route-link", {
+} ] ] ], [ "p-da2a10c6", [ [ 4, "stencil-route-link", {
   url: [ 1 ],
   urlMatch: [ 1, "url-match" ],
   activeClass: [ 1, "active-class" ],
@@ -41,35 +41,25 @@ import { g as t } from "./p-2d4e664e.js";
   ariaSetsize: [ 2, "aria-setsize" ],
   ariaLabel: [ 1, "aria-label" ],
   match: [ 32 ]
-} ] ] ], [ "p-1cd9a608", [ [ 0, "stencil-route-title", {
+} ] ] ], [ "p-493fffe2", [ [ 0, "stencil-route-title", {
   titleSuffix: [ 1, "title-suffix" ],
   pageTitle: [ 1, "page-title" ]
-} ] ] ], [ "p-a7b95cc9", [ [ 0, "stencil-router-prompt", {
+} ] ] ], [ "p-f11a6971", [ [ 0, "stencil-router-prompt", {
   when: [ 4 ],
   message: [ 1 ],
   history: [ 16 ],
   unblock: [ 32 ]
-} ] ] ], [ "p-a9766487", [ [ 0, "stencil-router-redirect", {
+} ] ] ], [ "p-88e72f3b", [ [ 0, "stencil-router-redirect", {
   history: [ 16 ],
   root: [ 1 ],
   url: [ 1 ]
-} ] ] ], [ "p-65659566", [ [ 0, "toctoc-randomizer-component", {
+} ] ] ], [ "p-43dbd159", [ [ 0, "toctoc-randomizer-component", {
   voicedText: [ 16 ],
   voicedImage: [ 16 ],
   stop: [ 64 ],
   playAudio: [ 64 ],
   start: [ 64 ]
-}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-99d560eb", [ [ 0, "png-player-component", {
-  zone: [ 16 ],
-  ignoreSoundEffect: [ 4, "ignore-sound-effect" ],
-  heightAuto: [ 4, "height-auto" ],
-  playSequence: [ 64 ],
-  playAndExitOnBreakpoint: [ 64 ],
-  playAndLoop: [ 64 ],
-  play: [ 64 ],
-  stop: [ 64 ],
-  isPlaying: [ 64 ]
-} ] ] ], [ "p-4ce995b5", [ [ 0, "app-root", {
+}, [ [ 9, "resize", "onWindowResize" ] ] ] ] ], [ "p-9fb4a464", [ [ 0, "app-root", {
   baseUrl: [ 32 ]
 } ], [ 0, "stencil-route", {
   group: [ 513 ],
@@ -97,4 +87,15 @@ import { g as t } from "./p-2d4e664e.js";
   scrollTopOffset: [ 2, "scroll-top-offset" ],
   location: [ 32 ],
   history: [ 32 ]
+} ] ] ], [ "p-ddf76702", [ [ 0, "png-player-component", {
+  zone: [ 16 ],
+  ignoreSoundEffect: [ 4, "ignore-sound-effect" ],
+  heightAuto: [ 4, "height-auto" ],
+  playSequence: [ 64 ],
+  playAndExitOnBreakpoint: [ 64 ],
+  playAndLoop: [ 64 ],
+  showThumbail: [ 64 ],
+  play: [ 64 ],
+  stop: [ 64 ],
+  isPlaying: [ 64 ]
 } ] ] ] ], e))));
