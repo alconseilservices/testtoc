@@ -271,9 +271,8 @@ class {
   }
   /**
    *
-   * @param doMute
-   */  stop(s) {
-    a.Sound.muted = !!s;
+   */  stop() {
+    a.Sound.stop();
   }
   /**
    *

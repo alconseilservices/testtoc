@@ -1,12 +1,12 @@
 import { r as s, h as e, c as a, H as t } from "./p-f983d8f8.js";
 
-import { b as o, a as i } from "./p-dafeb48e.js";
+import { b as o, a as i, w as n } from "./p-dbc793a8.js";
 
-import { a as n } from "./p-53d0f9d1.js";
+import { a as r } from "./p-625f43aa.js";
 
-import { s as r } from "./p-ed3d6334.js";
+import { s as c } from "./p-ed3d6334.js";
 
-const c = {
+const d = {
   backBtn: {
     x: 595,
     y: 388,
@@ -102,7 +102,7 @@ const c = {
     width: 500,
     height: -1
   }
-}, d = {
+}, h = {
   audioLibrary1: [ "./assets/lesphrases/sound/combination/F_rires7.mp3", "./assets/lesphrases/sound/combination/F_rires10.mp3", "./assets/lesphrases/sound/combination/F_rires11.mp3", "./assets/lesphrases/sound/combination/F_rires13.mp3" ],
   audioLibrary2: [ "./assets/lesphrases/sound/combination/G_CestCompletementToque.mp3", "./assets/lesphrases/sound/combination/G_CestCompletementToque_ALT.mp3", "./assets/lesphrases/sound/combination/G_IlEstDrole.mp3", "./assets/lesphrases/sound/combination/G_MaisQuelCoquin.mp3", "./assets/lesphrases/sound/combination/G_OhMaisCaVaPas.mp3", "./assets/lesphrases/sound/combination/G_OhMaisCaVaPasLaTete.mp3" ]
 }, l = {
@@ -170,7 +170,7 @@ const c = {
     text: "Pendant les vacances",
     audio: "./assets/lesphrases/sound/variable_01/Vacances.mp3"
   } ]
-}, h = {
+}, p = {
   zone2dateset: [ {
     text: "j'allume",
     audio: "./assets/lesphrases/sound/variable_02/Allumer.mp3"
@@ -256,7 +256,7 @@ const c = {
     text: "je tords",
     audio: "./assets/lesphrases/sound/variable_02/Tordre.mp3"
   } ]
-}, p = {
+}, u = {
   zone3dateset: [ {
     image: "./assets/common/cards/Arbre.png",
     audio: "./assets/lesphrases/sound/variable_03/Rhinoceros.mp3"
@@ -336,17 +336,17 @@ const c = {
     image: "./assets/common/cards/Voilier.png",
     audio: "./assets/lesphrases/sound/variable_03/Courgette.mp3"
   } ]
-}, u = class {
+}, m = class {
   constructor(e) {
-    s(this, e), this.zoning = c, this.expectedReadyEventCount = 2, this.readyEventCount = 1, 
+    s(this, e), this.zoning = d, this.expectedReadyEventCount = 2, this.readyEventCount = 1, 
     this.animationInProgress = !1, this.audioInProgress = !1, this.lastMascotEffect = "mascotrire";
   }
   /**
    *
    */  componentWillLoad() {
-    Object.assign(this.zoning, d), Object.assign(this.zoning, l), Object.assign(this.zoning, h), 
-    Object.assign(this.zoning, p), this.zoning.audioLibrary1 = this.zoning.audioLibrary1.map((s => n.register("lmal", s))), 
-    this.zoning.audioLibrary2 = this.zoning.audioLibrary2.map((s => n.register("lmal", s)));
+    Object.assign(this.zoning, h), Object.assign(this.zoning, l), Object.assign(this.zoning, p), 
+    Object.assign(this.zoning, u), this.zoning.audioLibrary1 = this.zoning.audioLibrary1.map((s => r.register("lmal", s))), 
+    this.zoning.audioLibrary2 = this.zoning.audioLibrary2.map((s => r.register("lmal", s)));
   }
   /**
    *
@@ -354,6 +354,9 @@ const c = {
     return e(t, null, e("img", {
       class: "les-phrases-toctoc-cartridge",
       ref: s => this.cartridgeRef = s,
+      style: {
+        opacity: "0"
+      },
       src: "./assets/lesphrases/cartouche_phrases.png"
     }), e("div", {
       class: "les-phrases-toctoc-container noscroll",
@@ -369,7 +372,7 @@ const c = {
       src: a("./assets/lesphrases/TocToc_Phrase.png")
     }), e("div", {
       class: "les-phrases-toctoc-back-btn clickable",
-      onClick: this.history.goBack,
+      onClick: () => this.onBackToMenu(),
       ref: s => this.backBtn = s
     }), e("div", {
       class: "les-phrases-toctoc-listen-btn clickable",
@@ -445,7 +448,7 @@ const c = {
    *
    */  drawElems() {
     this.decorReady() ? (this.drawCartridge(), this.drawBackBtn(), this.drawListenBtn(), 
-    this.drawMascot(), this.drawCrank(), this.drawZone1(), this.drawZone2(), this.drawZone3()) : setTimeout((() => this.drawElems()), 100);
+    this.drawMascot(), this.drawCrank(), this.drawZone1(), this.drawZone2(), this.drawZone3()) : setTimeout((() => this.drawElems()), 300);
   }
   /**
    *
@@ -457,22 +460,25 @@ const c = {
    * @param _evt
    */  handleReadyEvent() {
     this.readyEventCount++ >= this.expectedReadyEventCount && (this.loaderRef.style.display = "none", 
-    setTimeout((() => this.onCranckTouched.call(this)), 500));
+    setTimeout((() => this.onCranckTouched.call(this)), 600));
   }
   /**
    *
    */  drawCartridge() {
-    o(this.cartridgeRef, this.decorRef, this.zoning.cartridge), i(this.cartridgeRef, this.decorRef, this.zoning.cartridge, 0, 0);
+    o(this.cartridgeRef, this.decorRef, this.zoning.cartridge), i(this.cartridgeRef, this.decorRef, this.zoning.cartridge, 0, 0), 
+    this.cartridgeRef.style.opacity = "1";
   }
   /**
    *
    */  drawCrank() {
-    o(this.crankContainer, this.decorRef, this.zoning.crank), i(this.crankContainer, this.decorRef, this.zoning.crank, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
+    o(this.crankContainer, this.decorRef, this.zoning.crank), i(this.crankContainer, this.decorRef, this.zoning.crank, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    this.crank.drawCanvas(n(this.crankContainer), null), this.crank.redrawCurrentFrame();
   }
   /**
    *
    */  drawMascot() {
-    o(this.mascotContainer, this.decorRef, this.zoning.mascot), i(this.mascotContainer, this.decorRef, this.zoning.mascot, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
+    o(this.mascotContainer, this.decorRef, this.zoning.mascot), i(this.mascotContainer, this.decorRef, this.zoning.mascot, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    this.mascot.drawCanvas(n(this.mascotContainer), null), this.mascot.redrawCurrentFrame();
   }
   /**
    *
@@ -508,35 +514,35 @@ const c = {
     this.crankContainer.onclick = this.onCranckTouched.bind(this), this.listenBtn.onclick = async () => {
       this.animationInProgress || this.audioInProgress || (this.audioInProgress = !0, 
       await this.zone1.playAudio(), await this.zone2.playAudio(), await this.zone3.playAudio(), 
-      await r(1e3), this.playMascotEffect(), this.audioInProgress = !1);
+      await c(1e3), this.playMascotEffect(), this.audioInProgress = !1);
     }, this.zone1Btn.onclick = async () => {
       if (!this.animationInProgress && !this.audioInProgress) {
         this.animationInProgress = !0;
-        const s = n.playAndGetRef("bras_machine", {
+        const s = r.playAndGetRef("bras_machine", {
           offset: 1e3
         });
-        this.zone1.start(), await r(3e3), s.stop(), this.zone1.stop(), await this.zone1.playAudio(), 
-        await this.zone2.playAudio(), await this.zone3.playAudio(), await r(1e3), this.playMascotEffect(), 
+        this.zone1.start(), await c(3e3), s.stop(), this.zone1.stop(), await this.zone1.playAudio(), 
+        await this.zone2.playAudio(), await this.zone3.playAudio(), await c(1e3), this.playMascotEffect(), 
         this.animationInProgress = !1;
       }
     }, this.zone2Btn.onclick = async () => {
       if (!this.animationInProgress && !this.audioInProgress) {
         this.animationInProgress = !0;
-        const s = n.playAndGetRef("bras_machine", {
+        const s = r.playAndGetRef("bras_machine", {
           offset: 1e3
         });
-        this.zone2.start(), await r(3e3), s.stop(), this.zone2.stop(), await this.zone1.playAudio(), 
-        await this.zone2.playAudio(), await this.zone3.playAudio(), await r(1e3), this.playMascotEffect(), 
+        this.zone2.start(), await c(3e3), s.stop(), this.zone2.stop(), await this.zone1.playAudio(), 
+        await this.zone2.playAudio(), await this.zone3.playAudio(), await c(1e3), this.playMascotEffect(), 
         this.animationInProgress = !1;
       }
     }, this.zone3Btn.onclick = async () => {
       if (!this.animationInProgress && !this.audioInProgress) {
         this.animationInProgress = !0;
-        const s = n.playAndGetRef("bras_machine", {
+        const s = r.playAndGetRef("bras_machine", {
           offset: 1e3
         });
-        this.zone3.start(), await r(2e3), s.stop(), this.zone3.stop(), await this.zone1.playAudio(), 
-        await this.zone2.playAudio(), await this.zone3.playAudio(), await r(1e3), this.playMascotEffect(), 
+        this.zone3.start(), await c(2e3), s.stop(), this.zone3.stop(), await this.zone1.playAudio(), 
+        await this.zone2.playAudio(), await this.zone3.playAudio(), await c(1e3), this.playMascotEffect(), 
         this.animationInProgress = !1;
       }
     };
@@ -545,15 +551,15 @@ const c = {
    *
    */  async onCranckTouched() {
     this.animationInProgress || this.audioInProgress || (this.animationInProgress = !0, 
-    requestAnimationFrame(this.crank.play.bind(this.crank)), await r(1e3), this.zone1.start(), 
-    this.zone2.start(), this.zone3.start(), await r(2e3), this.zone1.stop(), this.zone1.playAudio(), 
-    await r(2e3), this.zone2.stop(), this.zone2.playAudio(), await r(2e3), this.zone3.stop(), 
-    this.zone3.playAudio(), await r(2e3), this.playMascotEffect(), this.animationInProgress = !1);
+    requestAnimationFrame(this.crank.play.bind(this.crank)), await c(1e3), this.zone1.start(), 
+    this.zone2.start(), this.zone3.start(), await c(2e3), this.zone1.stop(), this.zone1.playAudio(), 
+    await c(2e3), this.zone2.stop(), this.zone2.playAudio(), await c(2e3), this.zone3.stop(), 
+    this.zone3.playAudio(), await c(2e3), this.playMascotEffect(), this.animationInProgress = !1);
   }
   /**
    *
    */  async endSounds() {
-    await n.play(this.zoning.audioLibrary1[Math.floor(Math.random() * this.zoning.audioLibrary1.length)]);
+    await r.play(this.zoning.audioLibrary1[Math.floor(Math.random() * this.zoning.audioLibrary1.length)]);
   }
   /**
    *
@@ -562,11 +568,17 @@ const c = {
     this.lastMascotEffect = "mascotrire") : (this.mascot.playSequence("mascotsurprise", !0), 
     this.lastMascotEffect = "mascotsurprise");
   }
+  /**
+   *
+   */  onBackToMenu() {
+    r.stop(), this.crank.stop(), this.mascot.stop(), this.zone1.stop(), this.zone2.stop(), 
+    this.zone3.stop(), this.history.goBack();
+  }
   static get assetsDirs() {
     return [ "assets" ];
   }
 };
 
-u.style = ":host{display:block}.les-phrases-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-phrases-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-phrases-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-phrases-toctoc-listen-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/lesphrases/Picto_Ecouter.svg')}.les-phrases-toctoc-back-btn:hover,.les-phrases-toctoc-listen-btn:hover,.les-phrases-toctoc-zone-btn:hover{transform:scale(1.2)}.les-phrases-toctoc-mascot{position:absolute;border-radius:50%}.les-phrases-toctoc-crank{position:absolute;border-radius:50%}.les-phrases-toctoc-zone{position:absolute}.les-phrases-toctoc-zone-btn{position:absolute;border-radius:50%;background-color:rgb(74, 161, 174)}.les-phrases-toctoc-zone-btn div{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);border-radius:50%;height:50%;width:50%}.yellow{background-color:rgb(255, 215, 23)}.orange{background-color:rgb(254, 118, 40)}.beige{background-color:rgb(255, 254, 240)}.les-phrases-toctoc-cartridge{z-index:2;position:fixed}";
+m.style = ":host{display:block}.les-phrases-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-phrases-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-phrases-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-phrases-toctoc-listen-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/lesphrases/Picto_Ecouter.svg')}.les-phrases-toctoc-back-btn:hover,.les-phrases-toctoc-listen-btn:hover,.les-phrases-toctoc-zone-btn:hover{transform:scale(1.2)}.les-phrases-toctoc-mascot{position:absolute;border-radius:50%}.les-phrases-toctoc-crank{position:absolute;border-radius:50%}.les-phrases-toctoc-zone{position:absolute}.les-phrases-toctoc-zone-btn{position:absolute;border-radius:50%;background-color:rgb(74, 161, 174)}.les-phrases-toctoc-zone-btn div{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);border-radius:50%;height:50%;width:50%}.yellow{background-color:rgb(255, 215, 23)}.orange{background-color:rgb(254, 118, 40)}.beige{background-color:rgb(255, 254, 240)}.les-phrases-toctoc-cartridge{z-index:2;position:fixed;animation:opacity 1000 linear}";
 
-export { u as les_phrases_toctoc }
+export { m as les_phrases_toctoc }

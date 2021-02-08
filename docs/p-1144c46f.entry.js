@@ -1,6 +1,6 @@
 import { r as t, h as e } from "./p-f983d8f8.js";
 
-import { a as i } from "./p-53d0f9d1.js";
+import { a as i } from "./p-625f43aa.js";
 
 const o = class {
   constructor(e) {
@@ -37,8 +37,7 @@ const o = class {
     }, this.voicedText.map(((t, i) => e("div", {
       "data-item-index": i,
       class: {
-        "toctoc-randomizer-text": !0,
-        show: 0 === i
+        "toctoc-randomizer-text": !0
       },
       innerHTML: t.text
     })))) : e("div", {
@@ -47,8 +46,7 @@ const o = class {
     }, this.voicedImage.map(((t, i) => e("div", {
       "data-item-index": i,
       class: {
-        "toctoc-randomizer-image": !0,
-        show: 0 === i
+        "toctoc-randomizer-image": !0
       },
       style: {
         background: `center / contain no-repeat url("${t.image}")`

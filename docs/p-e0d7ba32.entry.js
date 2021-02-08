@@ -1,14 +1,14 @@
 import { r as t, h as e, c as i, H as s } from "./p-f983d8f8.js";
 
-import { b as n, a as o } from "./p-dafeb48e.js";
+import { b as o, a as n, w as r, h as a } from "./p-dbc793a8.js";
 
-import { Z as r, a } from "./p-53d0f9d1.js";
+import { Z as c, a as h } from "./p-625f43aa.js";
 
-import { f as c, s as h } from "./p-ed3d6334.js";
+import { f as d, s as l } from "./p-ed3d6334.js";
 
 /**
  *
- */ class d {
+ */ class m {
   /**
    *
    * @param elem
@@ -41,9 +41,9 @@ import { f as c, s as h } from "./p-ed3d6334.js";
   }
 }
 
-const l = class {
+const f = class {
   constructor(e) {
-    t(this, e), this.zoning = r, this.inactivityCount = 0, this.cardInViewIndex = -1, 
+    t(this, e), this.zoning = c, this.inactivityCount = 0, this.cardInViewIndex = -1, 
     this.animationInProgress = !1, this.initDone = !1, this.lastCard = !1, this.expectedReadyEventCount = 4, 
     this.readyEventCount = 1, this.mascotEffect = [ "mascotsurprise", "mascotrire" ], 
     this.lastMascotEffect = "mascotsurprise";
@@ -51,7 +51,7 @@ const l = class {
   /**
    *
    */  componentWillLoad() {
-    a.mute(!0), this.zoning.cardsList.imageLibrary.forEach((t => t.sound = a.register("lm", t.sound)));
+    h.mute(!0), this.zoning.cardsList.imageLibrary.forEach((t => t.sound = h.register("lm", t.sound)));
   }
   /**
    *
@@ -59,6 +59,9 @@ const l = class {
     return e(s, null, e("img", {
       class: "les-mots-toctoc-cartridge",
       ref: t => this.cartridgeRef = t,
+      style: {
+        opacity: "0"
+      },
       src: "./assets/lesmots/cartouche_mots.png"
     }), e("div", {
       class: "les-mots-toctoc-container noscroll",
@@ -82,14 +85,13 @@ const l = class {
       src: i("./assets/lesmots/TocToc_Mot_Socle.png")
     }), e("div", {
       class: "les-mots-toctoc-back-btn clickable",
-      onClick: this.history.goBack,
+      onClick: () => this.onBackToMenu(),
       ref: t => this.backBtn = t
     }), e("div", {
       class: "les-mots-toctoc-mascot",
       ref: t => this.mascotContainer = t
     }, e("png-player-component", {
       ref: t => this.mascot = t,
-      heightAuto: !0,
       onReady: () => this.handleReadyEvent(),
       zone: this.zoning.mascot
     })), e("div", {
@@ -108,13 +110,15 @@ const l = class {
         background: 'center bottom / contain no-repeat url("' + t.image + '")'
       }
     })))), e("div", {
-      class: "les-mots-toctoc-strainer"
+      class: "les-mots-toctoc-strainer",
+      ref: t => this.strainerRef = t
     }, e("png-player-component", {
       ref: t => this.strainer = t,
       onReady: () => this.handleReadyEvent(),
       zone: this.zoning.strainer
     })), e("div", {
-      class: "les-mots-toctoc-hammer"
+      class: "les-mots-toctoc-hammer",
+      ref: t => this.hammerRef = t
     }, e("png-player-component", {
       ref: t => this.hammer = t,
       onReady: () => this.handleReadyEvent(),
@@ -127,7 +131,8 @@ const l = class {
   /**
    *
    */  drawCartridge() {
-    n(this.cartridgeRef, this.decorRef, this.zoning.cartridge), o(this.cartridgeRef, this.decorRef, this.zoning.cartridge, 0, 0);
+    o(this.cartridgeRef, this.decorRef, this.zoning.cartridge), n(this.cartridgeRef, this.decorRef, this.zoning.cartridge, 0, 0), 
+    this.cartridgeRef.style.opacity = "1";
   }
   /**
    *
@@ -151,7 +156,7 @@ const l = class {
    */  drawElems() {
     this.decorReady() ? (this.drawConveyorBelt(), this.drawHammer(), this.createInactivityDectector(), 
     this.drawStrainer(), this.drawCardList(), this.drawWordPanel(), this.drawMascot(), 
-    this.drawBackBtn(), this.drawCartridge(), this.drawScanner()) : setTimeout((() => this.drawElems()), 1e3);
+    this.drawBackBtn(), this.drawCartridge(), this.drawScanner(), this.loaderRef.style.display = "none") : setTimeout((() => this.drawElems()), 1e3);
   }
   /**
    *
@@ -162,38 +167,38 @@ const l = class {
    *
    * @param _evt
    */  handleReadyEvent() {
-    this.readyEventCount++ >= this.expectedReadyEventCount && setTimeout((async () => {
-      await this.moveOnConveyor(), this.loaderRef.style.display = "none", a.mute(!1), 
-      this.attachListeners(), this.inactivityDetector.activate(), setTimeout((() => this.mascot.playSequence("mascotcoucou", !0)), 2e3);
-    }), 300);
+    this.readyEventCount++ >= this.expectedReadyEventCount && (this.moveOnConveyor(), 
+    h.mute(!1), this.attachListeners(), this.createInactivityDectector().activate(), 
+    setTimeout((() => this.mascot.playSequence("mascotcoucou", !0)), 2e3));
   }
   /**
    *
    */  createInactivityDectector() {
-    this.inactivityDetector || (this.inactivityDetector = new d(this.hammerBtn, 1e4, (() => {
+    return this.inactivityDetector || (this.inactivityDetector = new m(this.hammerBtn, 1e4, (() => {
       this.inactivityCount < 2 && (this.inactivityCount++, this.hammerBtn.classList.add("bounce-effect"), 
       this.mascot.playSequence("mascotdoigt", !0));
-    })));
+    }))), this.inactivityDetector;
   }
   /**
    *
    */  drawScanner() {
-    n(this.scannerRef, this.decorRef, this.zoning.scanner), o(this.scannerRef, this.decorRef, this.zoning.scanner, this.decorRef.getBoundingClientRect().top, 0);
+    o(this.scannerRef, this.decorRef, this.zoning.scanner), n(this.scannerRef, this.decorRef, this.zoning.scanner, this.decorRef.getBoundingClientRect().top, 0);
   }
   /**
    *
    */  drawBackBtn() {
-    n(this.backBtn, this.decorRef, this.zoning.backBtn), o(this.backBtn, this.decorRef, this.zoning.backBtn, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
+    o(this.backBtn, this.decorRef, this.zoning.backBtn), n(this.backBtn, this.decorRef, this.zoning.backBtn, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
   }
   /**
    *
    */  drawMascot() {
-    n(this.mascotContainer, this.decorRef, this.zoning.mascot), o(this.mascotContainer, this.decorRef, this.zoning.mascot, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
+    o(this.mascotContainer, this.decorRef, this.zoning.mascot), n(this.mascotContainer, this.decorRef, this.zoning.mascot, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    this.mascot.drawCanvas(r(this.mascotContainer), null), this.mascot.redrawCurrentFrame();
   }
   /**
    *
    */  drawWordPanel() {
-    n(this.wordPanel, this.decorRef, this.zoning.wordPanel), o(this.wordPanel, this.decorRef, this.zoning.wordPanel, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    o(this.wordPanel, this.decorRef, this.zoning.wordPanel), n(this.wordPanel, this.decorRef, this.zoning.wordPanel, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
     this.wordPanel.style.lineHeight = this.wordPanel.getBoundingClientRect().height + "px", 
     this.setWordFontSize(!0);
   }
@@ -205,7 +210,8 @@ const l = class {
   /**
    *
    */  drawCardList() {
-    n(this.cardsList, this.decorRef, this.zoning.cardsList), o(this.cardsList, this.decorRef, this.zoning.cardsList, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
+    this.cardsList.querySelectorAll(".les-mots-toctoc-card").forEach((t => t.classList.remove("les-mots-toctoc-card-motion-1s", "les-mots-toctoc-card-motion-2s", "les-mots-toctoc-card-motion-3s"))), 
+    o(this.cardsList, this.decorRef, this.zoning.cardsList), n(this.cardsList, this.decorRef, this.zoning.cardsList, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
     const t = this.cardsList.getBoundingClientRect();
     this.marginLeft = (this.conveyorBeltContainer.getBoundingClientRect().width - 2 * t.height) / 2, 
     this.cardsList.querySelectorAll(".les-mots-toctoc-card").forEach((e => {
@@ -217,17 +223,17 @@ const l = class {
    */  async moveOnConveyor() {
     const t = this.cardsList.getBoundingClientRect(), e = this.conveyorBeltContainer.getBoundingClientRect();
     this.cardInViewIndex++;
-    let i = c(".card-index-" + (this.cardInViewIndex - 1), this.cardsList), s = c(".card-index-" + this.cardInViewIndex, this.cardsList), n = c(".card-index-" + (this.cardInViewIndex + 1), this.cardsList), o = c(".card-index-" + (this.cardInViewIndex + 2), this.cardsList);
-    this.initDone || (o = n, n = s, s = null, this.cardInViewIndex--, this.initDone = !0);
-    const r = a.playAndGetRef("conveyorBelt", {
+    let i = d(".card-index-" + (this.cardInViewIndex - 1), this.cardsList), s = d(".card-index-" + this.cardInViewIndex, this.cardsList), o = d(".card-index-" + (this.cardInViewIndex + 1), this.cardsList), n = d(".card-index-" + (this.cardInViewIndex + 2), this.cardsList);
+    this.initDone || (n = o, o = s, s = null, this.cardInViewIndex--, this.initDone = !0);
+    const r = h.playAndGetRef("conveyorBelt", {
       loop: -1
     });
     requestAnimationFrame(this.conveyorBelt.playAndLoop.bind(this.conveyorBelt)), i && i.classList.add("hide"), 
     s && this.attachCardMotionClassAndMove(s, this.initDone ? "2s" : "3s", t.width - t.height + "px"), 
-    this.initDone || await h(1e3), n && this.attachCardMotionClassAndMove(n, "2s", e.width - t.height + "px"), 
+    this.initDone || await l(1e3), o && this.attachCardMotionClassAndMove(o, "2s", e.width - t.height + "px"), 
     // await sleep(1000);
-    o && this.attachCardMotionClassAndMove(o, "2s", "0px"), this.initDone, await h(2e3), 
-    r.stop(), this.conveyorBelt.stop(), this.lastCard = !n && !o, this.selectedCard = s;
+    n && this.attachCardMotionClassAndMove(n, "2s", "0px"), this.initDone, await l(2e3), 
+    r.stop(), this.conveyorBelt.stop(), this.lastCard = !o && !n, this.selectedCard = s;
   }
   /**
    *
@@ -239,18 +245,22 @@ const l = class {
   /**
    *
    */  drawConveyorBelt() {
-    n(this.conveyorBelt.parentElement, this.decorRef, this.zoning.conveyorBelt), o(this.conveyorBelt.parentElement, this.decorRef, this.zoning.conveyorBelt, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
+    o(this.conveyorBelt.parentElement, this.decorRef, this.zoning.conveyorBelt), n(this.conveyorBelt.parentElement, this.decorRef, this.zoning.conveyorBelt, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    this.conveyorBelt.drawCanvas(r(this.conveyorBeltContainer), a(this.conveyorBeltContainer)), 
+    this.conveyorBelt.redrawCurrentFrame();
   }
   /**
    *
    */  drawHammer() {
-    n(this.hammer.parentElement, this.decorRef, this.zoning.hammer), o(this.hammer.parentElement, this.decorRef, this.zoning.hammer, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
-    n(this.hammerBtn, this.decorRef, this.zoning.hammerBtn), o(this.hammerBtn, this.decorRef, this.zoning.hammerBtn, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
+    o(this.hammer.parentElement, this.decorRef, this.zoning.hammer), n(this.hammer.parentElement, this.decorRef, this.zoning.hammer, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    o(this.hammerBtn, this.decorRef, this.zoning.hammerBtn), n(this.hammerBtn, this.decorRef, this.zoning.hammerBtn, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    this.hammer.drawCanvas(r(this.hammerRef), a(this.hammerRef)), this.hammer.redrawCurrentFrame();
   }
   /**
    *
    */  drawStrainer() {
-    n(this.strainer.parentElement, this.decorRef, this.zoning.strainer), o(this.strainer.parentElement, this.decorRef, this.zoning.strainer, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
+    o(this.strainer.parentElement, this.decorRef, this.zoning.strainer), n(this.strainer.parentElement, this.decorRef, this.zoning.strainer, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    this.strainer.drawCanvas(r(this.strainerRef), a(this.strainerRef)), this.strainer.redrawCurrentFrame();
   }
   /**
    *
@@ -287,7 +297,7 @@ const l = class {
     // this.strainer.removeEventListener('animationFinished', this.onStrainerAnimationFinished.bind(this));
     this.wordPanel.innerHTML = this.selectedCard.dataset.imageName;
     const t = this.zoning.cardsList.imageLibrary.find((t => t.name === this.selectedCard.dataset.imageName));
-    a.play(t.sound), this.setWordFontSize(!0), this.animationInProgress = !1, setTimeout((() => this.playMascotEffect()), 1e3), 
+    h.play(t.sound), this.setWordFontSize(!0), this.animationInProgress = !1, setTimeout((() => this.playMascotEffect()), 1e3), 
     this.activityDetectorTimer = setTimeout((() => this.inactivityDetector.activate()), 2e3);
   }
   /**
@@ -297,11 +307,18 @@ const l = class {
     this.lastMascotEffect = "mascotrire") : (this.mascot.playSequence("mascotsurprise", !0), 
     this.lastMascotEffect = "mascotsurprise");
   }
+  /**
+   *
+   * @private
+   */  onBackToMenu() {
+    h.stop(), this.conveyorBelt.stop(), this.strainer.stop(), this.hammer.stop(), this.mascot.stop(), 
+    this.history.goBack();
+  }
   static get assetsDirs() {
     return [ "assets" ];
   }
 };
 
-l.style = ".les-mots-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-mots-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-mots-toctoc-conveyor-belt{position:absolute}.les-mots-toctoc-mascot{position:absolute;border-radius:50%}.les-mots-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-mots-toctoc-back-btn:hover{transform:scale(1.2)}.les-mots-toctoc-word-panel{color:rgb(0, 0, 0);font-family:'Arial Rounded Bold';position:absolute;text-align:center;transition:font-size .3s linear}.les-mots-toctoc-hammer{position:absolute;cursor:pointer}.les-mots-toctoc-hammer-btn{position:absolute;background-color:rgb(221, 42, 0);border-radius:50%}.les-mots-toctoc-strainer{position:absolute}.les-mots-toctoc-cards-list::-webkit-scrollbar{display:none}.les-mots-toctoc-cards-list{position:absolute;overflow:hidden}.les-mots-toctoc-card{position:absolute;width:auto;height:100%;-webkit-transition:all 1s linear;-moz-transition:all 1s linear;-o-transition:all 1s linear;-ms-transition:all 1s linear;transition:all 1s linear}.les-mots-toctoc-card-motion-1s{-webkit-transition:left 1s linear;-moz-transition:left 1s linear;-o-transition:left 1s linear;-ms-transition:left 1s linear;transition:left 1s linear}.les-mots-toctoc-card-motion-1s5{-webkit-transition:left 1.5s linear;-moz-transition:left 1.5s linear;-o-transition:left 1.5s linear;-ms-transition:left 1.5s linear;transition:left 1.5s linear}.les-mots-toctoc-card-motion-2s{-webkit-transition:left 2s linear;-moz-transition:left 2s linear;-o-transition:left 2s linear;-ms-transition:left 2s linear;transition:left 2s linear}.les-mots-toctoc-card-motion-3s{-webkit-transition:left 3s linear;-moz-transition:left 3s linear;-o-transition:left 3s linear;-ms-transition:left 3s linear;transition:left 3s linear}.les-mots-toctoc-cartridge{z-index:2;position:fixed}.les-mots-toctoc-scanner{position:absolute;background-color:rgb(109, 208, 217);border-top-right-radius:15px}";
+f.style = ".les-mots-toctoc-container{position:relative;background-color:rgb(255, 254, 240);height:100%;overflow:auto}.les-mots-toctoc-decor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:95%}.les-mots-toctoc-conveyor-belt{position:absolute}.les-mots-toctoc-mascot{position:absolute;border-radius:50%}.les-mots-toctoc-back-btn{position:absolute;border-radius:50%;background:center / contain no-repeat url('./assets/common/icon/Picto_Retour.svg')}.les-mots-toctoc-back-btn:hover{transform:scale(1.2)}.les-mots-toctoc-word-panel{color:rgb(0, 0, 0);font-family:'Arial Rounded Bold';position:absolute;text-align:center;transition:font-size .3s linear}.les-mots-toctoc-hammer{position:absolute;cursor:pointer}.les-mots-toctoc-hammer-btn{position:absolute;background-color:rgb(221, 42, 0);border-radius:50%}.les-mots-toctoc-strainer{position:absolute}.les-mots-toctoc-cards-list::-webkit-scrollbar{display:none}.les-mots-toctoc-cards-list{position:absolute;overflow:hidden}.les-mots-toctoc-card{position:absolute;width:auto;height:100%}.les-mots-toctoc-card-animated{-webkit-transition:all 1s linear;-moz-transition:all 1s linear;-o-transition:all 1s linear;-ms-transition:all 1s linear;transition:all 1s linear}.les-mots-toctoc-card-motion-1s{-webkit-transition:left 1s linear;-moz-transition:left 1s linear;-o-transition:left 1s linear;-ms-transition:left 1s linear;transition:left 1s linear}.les-mots-toctoc-card-motion-1s5{-webkit-transition:left 1.5s linear;-moz-transition:left 1.5s linear;-o-transition:left 1.5s linear;-ms-transition:left 1.5s linear;transition:left 1.5s linear}.les-mots-toctoc-card-motion-2s{-webkit-transition:left 2s linear;-moz-transition:left 2s linear;-o-transition:left 2s linear;-ms-transition:left 2s linear;transition:left 2s linear}.les-mots-toctoc-card-motion-3s{-webkit-transition:left 3s linear;-moz-transition:left 3s linear;-o-transition:left 3s linear;-ms-transition:left 3s linear;transition:left 3s linear}.les-mots-toctoc-cartridge{z-index:2;position:fixed}.les-mots-toctoc-scanner{position:absolute;background-color:rgb(109, 208, 217);border-top-right-radius:15px}";
 
-export { l as les_mots_toctoc }
+export { f as les_mots_toctoc }

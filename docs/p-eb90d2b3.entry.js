@@ -1,10 +1,10 @@
-import { r as t, h as o, c as s } from "./p-f983d8f8.js";
+import { r as t, h as e, c as o } from "./p-f983d8f8.js";
 
-import { z as e, a as i, b as a } from "./p-dafeb48e.js";
+import { z as s, a as i, b as n, w as c } from "./p-dbc793a8.js";
 
-import { a as c } from "./p-53d0f9d1.js";
+import { a } from "./p-625f43aa.js";
 
-const n = {
+const h = {
   playBtn1: {
     x: 1240,
     y: 1691,
@@ -40,28 +40,12 @@ const n = {
       id: "mascotcoucou",
       pathPrefix: "./assets/common/anim/mascotte/mascotte_coucou/Mascotte_Coucou_",
       totalFrames: 50
-    }, {
-      id: "mascotdoigt",
-      pathPrefix: "./assets/common/anim/mascotte/mascotte_doigt/Mascotte_Doigt_",
-      totalFrames: 75,
-      animationDurationMs: 1e3,
-      soundEffect: "mascotte_doigt"
-    }, {
-      id: "mascotrire",
-      pathPrefix: "./assets/common/anim/mascotte/mascotte_rire/Mascotte_Rire_",
-      totalFrames: 100,
-      soundEffect: "mascotte_rire"
-    }, {
-      id: "mascotsurprise",
-      pathPrefix: "./assets/common/anim/mascotte/mascotte_surprise/Mascotte_Surprise_",
-      totalFrames: 75,
-      soundEffect: "mascotte_surprise"
     } ],
-    animationDurationMs: 2e3
+    animationDurationMs: 1e3
   }
 }, r = class {
-  constructor(o) {
-    t(this, o), this.zoning = n;
+  constructor(e) {
+    t(this, e), this.zoning = h;
   }
   /**
    *
@@ -69,83 +53,91 @@ const n = {
     this.baseUrl = location.pathname.substring(0, location.pathname.lastIndexOf("/"));
   }
   render() {
-    return o("div", {
+    return e("div", {
       class: "toc-toc-menu noscroll",
       ref: t => this.menuContainerRef = t
-    }, o("img", {
+    }, e("img", {
       class: "toc-toc-menu-decor",
       ref: t => this.decorRef = t,
-      src: s("./assets/home/TocToc_Menu_Machine.png")
-    }), o("div", {
+      src: o("./assets/home/TocToc_Menu_Machine.png")
+    }), e("div", {
       class: "toc-toc-menu-mascot",
       ref: t => this.mascotRef = t
-    }, o("png-player-component", {
+    }, e("png-player-component", {
       ref: t => this.mascot = t,
-      heightAuto: !0,
       onReady: () => setTimeout((() => this.mascot.playSequence("mascotcoucou", !0)), 1e3),
       zone: this.zoning.mascot
-    })), o("div", {
+    })), e("div", {
       class: "toc-toc-menu-play clickable",
       ref: t => this.card1 = t,
       onClick: t => this.goTo(t, this.baseUrl + "/les-mots-toctoc.html", "bouton1")
-    }), o("img", {
+    }), e("img", {
       class: "toc-toc-menu-play clickable",
       width: "0",
       height: "0",
       ref: t => this.btn1 = t,
       onClick: t => this.goTo(t, this.baseUrl + "/les-mots-toctoc.html", "bouton1"),
-      src: s("./assets/home/" + this.zoning.playBtn1.image)
-    }), o("div", {
+      src: o("./assets/home/" + this.zoning.playBtn1.image)
+    }), e("div", {
       class: "toc-toc-menu-play clickable",
       ref: t => this.card2 = t,
       onClick: t => this.goTo(t, this.baseUrl + "/les-phrases-toctoc.html", "bouton2")
-    }), o("img", {
+    }), e("img", {
       class: "toc-toc-menu-play clickable",
       width: "0",
       height: "0",
       ref: t => this.btn2 = t,
       onClick: t => this.goTo(t, this.baseUrl + "/les-phrases-toctoc.html", "bouton2"),
-      src: s("./assets/home/" + this.zoning.playBtn2.image)
+      src: o("./assets/home/" + this.zoning.playBtn2.image)
     }));
   }
   /**
    *
    * @param _evt
    */  onWindowResize(t) {
-    this.drawMascot(), this.drawButtons();
+    this.drawElems();
   }
   /**
    *
    * @param _evt
    */  onOrientationChange(t) {
-    this.drawMascot(), this.drawButtons();
+    this.drawElems();
   }
   /**
    *
-   */  componentDidRender() {
-    setTimeout((() => {
-      this.drawMascot(), this.drawButtons(), c.play("pouet");
-    }), 500);
+   */  componentDidLoad() {
+    this.drawElems(), a.play("pouet");
+  }
+  /**
+   *
+   */  drawElems() {
+    this.decorReady() ? (this.drawMascot(), this.drawButtons()) : setTimeout((() => this.drawElems()), 500);
+  }
+  /**
+   *
+   */  decorReady() {
+    return this.decorRef.getBoundingClientRect().width > 0;
   }
   /**
    *
    */  drawButtons() {
-    e(this.btn1, this.decorRef, this.zoning.playBtn1), i(this.btn1, this.decorRef, this.zoning.playBtn1, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
-    a(this.card1, this.decorRef, this.zoning.lesMotsCard), i(this.card1, this.decorRef, this.zoning.lesMotsCard, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
-    e(this.btn2, this.decorRef, this.zoning.playBtn2), i(this.btn2, this.decorRef, this.zoning.playBtn2, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
-    a(this.card2, this.decorRef, this.zoning.lesPhrasesCard), i(this.card2, this.decorRef, this.zoning.lesPhrasesCard, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
+    s(this.btn1, this.decorRef, this.zoning.playBtn1), i(this.btn1, this.decorRef, this.zoning.playBtn1, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    n(this.card1, this.decorRef, this.zoning.lesMotsCard), i(this.card1, this.decorRef, this.zoning.lesMotsCard, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    s(this.btn2, this.decorRef, this.zoning.playBtn2), i(this.btn2, this.decorRef, this.zoning.playBtn2, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    n(this.card2, this.decorRef, this.zoning.lesPhrasesCard), i(this.card2, this.decorRef, this.zoning.lesPhrasesCard, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
   }
   /**
    *
    */  drawMascot() {
-    a(this.mascotRef, this.decorRef, this.zoning.mascot), i(this.mascotRef, this.decorRef, this.zoning.mascot, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left);
+    n(this.mascotRef, this.decorRef, this.zoning.mascot), i(this.mascotRef, this.decorRef, this.zoning.mascot, this.decorRef.getBoundingClientRect().top, this.decorRef.getBoundingClientRect().left), 
+    this.mascot.drawCanvas(c(this.mascotRef), null);
   }
   /**
    *
    * @param page
    * @param sound
-   */  async goTo(t, o, s) {
-    c.play(s), this.history.push(o, {});
+   */  async goTo(t, e, o) {
+    a.play(o), this.history.push(e, {});
   }
   static get assetsDirs() {
     return [ "assets" ];

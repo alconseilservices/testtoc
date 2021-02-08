@@ -59,7 +59,7 @@ function zoneWidth(t, e) {
  * @param zone
  * @param offsetTop
  * @param offsetLeft
- */ function zoneTopLeftForElem(t, e, i, n, o) {
+ */ function zoneTopLeftForElem(t, e, i, o, h) {
   t.style.top = 
   /**
  *
@@ -69,9 +69,23 @@ function zoneWidth(t, e) {
  */
   function(t, e, i) {
     return e.y * sizeRatioHeight(t) + i + "px";
-  }(e, i, n), t.style.left = function(t, e, i) {
+  }(e, i, o), t.style.left = function(t, e, i) {
     return e.x * sizeRatioWidth(t) + i + "px";
-  }(e, i, o);
+  }(e, i, h);
 }
 
-export { zoneTopLeftForElem as a, zoneWidthHeightForElem as b, zoneWidthHeightForImage as z }
+/**
+ *
+ * @param elem
+ */ function widthFromElem(t) {
+  return parseFloat(t.style.width.replace("px", ""));
+}
+
+/**
+ *
+ * @param elem
+ */ function heightFromElem(t) {
+  return parseFloat(t.style.height.replace("px", ""));
+}
+
+export { zoneTopLeftForElem as a, zoneWidthHeightForElem as b, heightFromElem as h, widthFromElem as w, zoneWidthHeightForImage as z }
