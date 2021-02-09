@@ -7,11 +7,11 @@ import { g as t } from "./p-2d4e664e.js";
  */ (() => {
   const o = import.meta.url, t = {};
   return "" !== o && (t.resourcesUrl = new URL(".", o).href), e(t);
-})().then((e => (t(), o([ [ "p-23073042", [ [ 0, "les-phrases-toctoc", {
+})().then((e => (t(), o([ [ "p-b6889bc5", [ [ 0, "les-phrases-toctoc", {
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-eb90d2b3", [ [ 0, "app-home", {
   history: [ 16 ]
-}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-e0d7ba32", [ [ 0, "les-mots-toctoc", {
+}, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-5aa6670d", [ [ 0, "les-mots-toctoc", {
   history: [ 16 ]
 }, [ [ 9, "resize", "onWindowResize" ], [ 8, "orientationchange", "onOrientationChange" ] ] ] ] ], [ "p-2ed45f91", [ [ 0, "context-consumer", {
   context: [ 16 ],
@@ -87,7 +87,7 @@ import { g as t } from "./p-2d4e664e.js";
   scrollTopOffset: [ 2, "scroll-top-offset" ],
   location: [ 32 ],
   history: [ 32 ]
-} ] ] ], [ "p-e9ac8b03", [ [ 0, "png-player-component", {
+} ] ] ], [ "p-27a7498e", [ [ 0, "png-player-component", {
   zone: [ 16 ],
   ignoreSoundEffect: [ 4, "ignore-sound-effect" ],
   heightAuto: [ 4, "height-auto" ],
